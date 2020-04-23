@@ -11,12 +11,37 @@
         <img class='portfolioPhoto' src='./images/me.png' alt='Jordan Dickson'>
         <h1>Jordan Dickson's Portfolio</h1>
     </div>
-    <select id="weeks" class='weeks'>
-        <option value="week1"><a href="./week1/index.html">Week 1</a></option>
-        <option value="week2">Week 2</option>
-        <option value="week3">Week 3</option>
-        <option value="week4">Week 4</option>
-    </select>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Weeks</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="./week1/index.html">Week 1</a>
+          <a href="./week2/index.html">Week 2</a>
+          <a href="./week3/index.html">Week 3</a>
+          <a href="./week4/index.html">Week 4</a>
+        </div>
+    </div>
 
 </body>
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
 </html>
