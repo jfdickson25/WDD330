@@ -1,14 +1,19 @@
+/* Element styling */
 body {
     background-color: #194C80;
 }
 
-.portfolioPhoto {
-    width: 40%;
-    margin-left: 30%;
-    margin-right: 30%;
-    margin-bottom: 0px;
-    padding-top: 10px;
+footer {
+  position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:white;
+   color: black;
+   padding: 10px;
 }
+
 
 h1 {
     margin-top: 0px;
@@ -22,6 +27,43 @@ h1 {
     border-radius: 20px;
     background-color: white;
     font-family: 'Courier New', Courier, monospace;
+}
+
+ul {
+  text-decoration:none;
+}
+
+ul li a{
+  text-decoration: none;
+  color: black;
+  border: 1px solid grey;
+  color: black;
+  background-color: white;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+  font-size: larger;
+}
+
+li {
+  display: none;
+}
+
+ul :first-child {
+  display: block;
+  font-weight: bold;
+}
+
+
+
+/* Class styling */
+.portfolioPhoto {
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 0px;
+  padding-top: 10px;
 }
 
 .portfolioTop {
@@ -42,65 +84,12 @@ h1 {
     height: 20%;
 }
 
-option {
-    font-size: 10px;
+.show li {
+  display: block;
+  width: 100%;
 }
 
+/* Id styling */
 
-/* Dropdown Button */
-.dropbtn {
-    background-color: #f8f9fa;
-    color: black;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 10px;
-  }
-  
-  /* Dropdown button on hover & focus */
-  .dropbtn:hover, .dropbtn:focus {
-    background-color: #f8f9fa;
-    color: black;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd}
-  
-  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-  .show {
-      display:block;
-      width: 100%;
-    }
 
-  .dropdown {
-      width: 50%;
-      margin-left: 25%;
-      margin-right: 25%;
-  }
 

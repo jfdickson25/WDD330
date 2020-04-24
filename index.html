@@ -1,47 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=0;"/>
-    <link rel="stylesheet" href="./styles/index.css">
-    <title>Porfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=0;" />
+  <link rel="stylesheet" href="styles/index.css">
+  <title>Porfolio</title>
 </head>
+
 <body>
-    <div class="portfolioTop">
+  <header>
+    <nav>
+      <div class="portfolioTop">
         <img class='portfolioPhoto' src='./images/me.png' alt='Jordan Dickson'>
         <h1>Jordan Dickson's Portfolio</h1>
-    </div>
-    <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Weeks</button>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="./week1/index.html">Week 1</a>
-          <a href="./week2/index.html">Week 2</a>
-          <a href="./week3/index.html">Week 3</a>
-          <a href="./week4/index.html">Week 4</a>
-        </div>
-    </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <ul id='header-list'>
+      <li id='show'><a href="#">&#9776; Menu </a></li>
+      <li><a href="./week1">Week 1</a></li>
+      <li><a href="./week2">Week 2</a></li>
+      <li><a href="./week3">Week 3</a></li>
+      <li><a href="./week4">Week 4</a></li>
+    </ul>
+  </main>
+
+  <footer>
+    &copy Jordan Dickson 2020
+  </footer>
+
 
 </body>
-<script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
+<script src="scripts/index.js"></script>
 
 </html>
