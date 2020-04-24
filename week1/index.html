@@ -1,38 +1,120 @@
 <!-- Doctype found on https://stackoverflow.com/questions/11851627/make-image-element-fixed-position-and-doesnt-move-on-scroll to help with fixed image -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 1</title>
     <link rel="stylesheet" href="../styles/week.css">
+    <link rel="stylesheet" href="week1.css">
 </head>
-<body>
-        <header>
-            <ul id='navigation'>
-                <li id='menu'><a href="#">&#9776; Menu </a></li>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="#">Week 1</a></li>
-                <li><a href="../week2">Week 2</a></li>
-                <li><a href="../week3">Week 3</a></li>
-                <li><a href="../week4">Week 4</a></li>
-              </ul>
-        </header>
-        <main>
-            <h1>Week 1 Notes:</h1>
-            <div class='notes'>
-                <p></p>
+
+<body onload='initialize()'>
+    <header>
+        <ul id='navigation'>
+            <li id='menu'><a href="#">&#9776; Menu </a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#">Week 1</a></li>
+            <li><a href="../week2">Week 2</a></li>
+            <li><a href="../week3">Week 3</a></li>
+            <li><a href="../week4">Week 4</a></li>
+        </ul>
+    </header>
+    <main>
+        <h2>Week 1 Notes:</h2>
+        <div class='notes'>
+            <h3>Syllabus</h3>
+
+            <h4>Outcomes</h4>
+            <p>"By taking advantage of the opportunities this course presents, you will develop fundamental knowledge
+                and skills in computing and technology and improve your professional possibilities by:</p>
+
+            <p>
+                becoming more efficient at applying your innate curiosity and creativity,
+                becoming more dexterous at exploring your environment,
+                becoming a person who enjoys helping and learning from others,
+                using a divide and conquer approach to design solutions for programming problems,
+                finding and trouble shooting bugs you and others will have in the code you write, and
+                developing and debugging HTML, CSS, and JavaScript programs that use medium complexity web
+                technologies."
+            </p>
+
+            <h3>Doing Stuff with Web Things</h3>
+            <p>"Did you catch that? Since a key can only be associated with one
+                thing at a time, you have to convert the array of customers into one
+                thing. That one thing is a JSON string. Do this, and now you’ve
+                fooled localStorage into associating a key with multiple things.
+                Kind of like getting a young child to have more than one best
+                friend like adults do."</p>
+
+            <h3>Creating a portfolio</h3>
+            <p>"As you read, take notes and complete exercises record your work in this portfolio,
+                making sure to keep the index up to date. If you do then turning in the link to your portfolio will
+                be the best way to turn in your work each week, and at the mid and final checkpoints."</p>
+
+            <h3>Master Mobile UX</h3>
+                
+                    <p>Mobile first allows for much easier transition to desktop</p>
+                    <p>Designing mobile first is much more cost effective.</p>
+                    <p>Users can reach buttons most easily at the bottom of the screen. Try to keep buttons at the bottom of the screen rather than the top.</p>
+                    <p>Use svg rather than png or jpg. This allows the connection with the server not to be slowed down.</p>
+                
+           
+        </div>
+
+        <h2>Week 1 code examples:</h2>
+        <div class='notes'>
+            <h3>Example from Doing stuff with web things</h3>
+            <code>
+                function saveStory(){<br>
+                var storyName = document.getElementById(“name_input”).value
+                var storyHTML = document.getElementById(“story_editor”).value
+                localStorage.setItem(storyName, storyHTML)<br>
+                }
+            </code>
+            <h3>Local Storage Counter Code</h3>
+            <code>
+
+                // Counter functions<br>
+                function initialize() {<br>
+                console.log('Initialized');
+                console.log(localStorage.count);
+                document.getElementById('count').innerHTML = localStorage.count;<br>
+                }
+                <br>
+                <br>
+                function add() {<br>
+                localStorage.count = Number(localStorage.count) + 1;
+                document.getElementById('count').innerHTML = localStorage.count;
+                }<br>
+                <br>
+                <br>
+                function subtract() {<br>
+                if (localStorage.count > 0) {<br>
+                localStorage.count = Number(localStorage.count) - 1;
+                document.getElementById('count').innerHTML = localStorage.count;
+                }<br>
+                }<br>
+            </code>
+
+            <div class='counter'>
+                <h1 id='count'></h1>
+                <br>
+                <button type='button' onclick='add()'>+</button>
+                <button type='button' onclick='subtract()'>-</button>
             </div>
 
-         <div class='meSection'>
-             <img class='meImage' src="../images/me.png" alt="Me">
-         </div>
-        </main>
-        <footer>
-            &copy Jordan Dickson 2020
-        </footer>
-    
+        </div>
+    </main>
+    <footer>
+        &copy Jordan Dickson 2020
+        <img class='meImage' src="../images/me.png" alt="Me">
+    </footer>
 
-       <script src="../scripts/index.js"></script>
+
+    <script src="../scripts/index.js"></script>
+    <script src="week1.js"></script>
 </body>
+
 </html>

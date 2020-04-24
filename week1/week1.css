@@ -1,0 +1,19 @@
+button {
+    width: 50px;
+}
+
+.counter {
+    width: 100%;
+    text-align: center;
+}
+
+h1#count {
+    margin-bottom: 0;;
+}
+
+ol li {
+    display: block;
+    list-style: circle;
+    list-style-position: inside;
+
+}
