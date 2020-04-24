@@ -1,8 +1,60 @@
-/* Element styling */
 body {
-    background-color: #194C80;
-    width: 100%;
-    margin: 0px;
+  height: 100%;
+  position: relative;
+  background-color: #194C80;
+  margin: 0px;
+ }
+
+ footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  margin: 0px;
+  padding: 5px;
+ }
+
+ ul {
+  text-decoration:none;
+  padding: 0px;
+  margin: 0px;
+}
+
+ul li a{
+  text-decoration: none;
+  color: black;
+  border: 1px solid grey;
+  color: black;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  font-size: larger;
+  padding: 5px;
+}
+
+li {
+  display: none;
+}
+
+ul :first-child {
+  display: block;
+  font-weight: bold;
+}
+
+.show li {
+  display: block;
+  width: 100%;
+}
+
+.meSection {
+  bottom: 0px;
+  position: fixed;
+  width: 100%;
+}
+
+.meImage {
+  height: 200px;
+  width: 200px;
 }
 
 
