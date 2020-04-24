@@ -1,5 +1,5 @@
 function initialize() {
-    if (localStorage.count == undefined) {
+    if (localStorage.count == undefined || isNaN(localStorage.count)) {
         localStorage.count = 0;
     }
     console.log('Initialized');
