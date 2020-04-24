@@ -1,8 +1,8 @@
-body {
+body, html {
   height: 100%;
-  position: relative;
   background-color: #194C80;
   margin: 0px;
+  padding: 0px;
  }
 
  footer {
@@ -39,6 +39,10 @@ li {
 ul :first-child {
   display: block;
   font-weight: bold;
+}
+
+main {
+  height: 100%;
 }
 
 .show li {

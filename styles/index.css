@@ -1,6 +1,9 @@
 /* Element styling */
 body {
+    height: 100%;
     background-color: #194C80;
+    margin: 0px;
+    padding: 0px;
 }
 
 footer {
