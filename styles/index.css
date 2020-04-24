@@ -31,6 +31,7 @@ h1 {
 
 ul {
   text-decoration:none;
+  padding: 0px;
 }
 
 ul li a{
@@ -53,6 +54,8 @@ li {
 ul :first-child {
   display: block;
   font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
