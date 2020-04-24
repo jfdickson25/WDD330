@@ -1,4 +1,7 @@
 function initialize() {
+    if (localStorage.count == undefined) {
+        localStorage.count = 0;
+    }
     console.log('Initialized');
     console.log(localStorage.count);
     document.getElementById('count').innerHTML = localStorage.count;
