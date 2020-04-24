@@ -58,6 +58,7 @@ li {
 
 ul :first-child {
   display: block;
+  font-weight: bold;
 }
 
 
@@ -74,6 +75,11 @@ ul :first-child {
 .bottom-pic :first-child {
   width: 100px;
   height: 100px;
+}
+
+.show li {
+  display: block;
+  width: 100%;
 }
 
 
