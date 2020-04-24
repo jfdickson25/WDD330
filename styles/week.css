@@ -1,8 +1,8 @@
-body, html {
+body {
   height: 100%;
+  position: relative;
   background-color: #194C80;
   margin: 0px;
-  padding: 0px;
  }
 
  footer {
@@ -41,10 +41,6 @@ ul :first-child {
   font-weight: bold;
 }
 
-main {
-  height: 100%;
-}
-
 .show li {
   display: block;
   width: 100%;
@@ -61,6 +57,12 @@ main {
   width: 200px;
 }
 
+.notes {
+  margin: 15px;
+  padding: 20px;
+  text-align: center;
+
+}
 
 
 
