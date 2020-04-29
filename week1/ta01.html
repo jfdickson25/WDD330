@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Activity 1</title>
+    <style>
+        body {
+            margin: 25px;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <main>
+        <section>
+            <h3>Requirement 1 & 2</h3>
+            <label for="number">Add Up</label>
+            <input id='number' type="number" min='0' max='10000'>
+            <button onclick='calculate()'>Add Up</button>
+            <div id='calculate'></div>
+        </section>
+            
+        <br>
+        <br>
+        <section>
+            <h3>Requirement 3 & Stretch Goal 1</h3>
+            <label for="number1">First Number</label>
+            <input id='number1' type="number" min='0' max='10000'>
+            <br>
+            <label for="number2">Second Number</label>
+            <input id='number2' type="number" min='0' max='10000'>
+            <br>
+            <button onclick='add()'>Add</button>
+            <button id='subtract'>Subtract</button>
+            <button id='multiply'>Multiply</button>
+            <div id='plus'></div>
+        </section>
+    </main>
+
+    <script>
+        function calculate() {
+            let number = document.getElementById('number').value;
+            let sum = 0;
+            for (let i = 0; i <= number; i++) {
+                sum += i;
+            }
+            document.getElementById('calculate').innerHTML = sum;
+        }
+
+        function add() {
+            let number1 = document.getElementById('number1').value;
+            let number2 = document.getElementById('number2').value;
+
+            document.getElementById('plus').innerHTML = Number(number1) + Number(number2);
+        }
+
+        const subtract = function subtract() {
+            let number1 = document.getElementById('number1').value;
+            let number2 = document.getElementById('number2').value;
+
+            document.getElementById('plus').innerHTML = Number(number1) - Number(number2);
+
+        }
+
+        const multiply = () => {
+
+            let number1 = document.getElementById('number1').value;
+            let number2 = document.getElementById('number2').value;
+
+            document.getElementById('plus').innerHTML = Number(number1) * Number(number2);
+        }
+
+        document.querySelector('#subtract').addEventListener('click', subtract);
+        document.querySelector('#multiply').addEventListener('click', multiply);
+    </script>
+</body>
+</html>
