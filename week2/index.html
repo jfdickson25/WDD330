@@ -23,25 +23,74 @@
     <main>
         <h2>Week 2 Notes:</h2>
         <div class='notes'>
-            <p></p>
+            <h3>Chapter 3</h3>
+            <p>The shift() method works in a similar way to the pop() method, but this removes thefirstitem in the array</p>
+            <p>The unshift() method is similar to the push() method, but this appends a new item to thebeginningof the array:</p>
+            <p>The join() method can be used to turn the array into a string that comprises all the items in the array, separated by commas</p>
+            <p>The slice() method creates a subarray; effectively chopping out a slice of an original array, starting at one position and finishing at another. For example, if we wanted to find the 3rd and 4th item in our array we would use the following code</p>
+            <p>The splice() method removes items from an array then inserts new items in their place. For example, the following code removes the string 'Hulk' and replaces it with 'Scarlett Witch'</p>
+            <p>Sets were introduced to the specification in ES6. A set is a data structure that represents a collection of unique values, so it cannot include any duplicate values. </p>
+            <p>A memory leak occurs when a program retains references to values that can no longer be accessed in its memory. This means that memory is being used to store values that are no longer required by the program, effectively wasting system resources.
+            <p>Memory leaks can cause problems by gradually reducing the overall memory available, which can cause the program, or even the entire system, to run more slowly.</p>
         </div>
 
         <h2>Week 2 code examples:</h2>
         <div class='notes'>
-            <code></code>
+            <code>avengers.concat(['Hulk','Hawkeye', 'Black Widow']);<br>
+                 ['Captain America', 'Iron Man', 'Thor', 'Hulk', 'Hawkeye', 'Black Widow'] <br>
+            
+                 An alternative is to use the new spread operator that was added to ES6. The spread operator is three dots, <br>
+                 ... that are placed in front of an array, with the effect of spreading out the elements of that array. <br>
+                 This can be used to spread the elements of two arrays and put them together in a new array, like so: <br>
+
+                 
+                 // Remove item <br>
+                 avengers = [ ...avengers, ...['Hulk','Hawkeye', 'Black Widow'] ]; <br>
+                 ['Captain America', 'Iron Man', 'Thor', 'Hulk', 'Hawkeye', 'Black Widow'] <br>
+                 avengers.splice(2,1); // will remove the item at index 2 (i.e. the third item in the array) <br>
+                  [ 'Thor' ] <br>
+
+
+                Sandbox Bean Counting Problem <br>
+                // Your code here. <br>
+
+                const countBs = (x) => { <br> 
+                    var count = 0; <br>
+                    for (var i = 0; i &lt; x.length; i++) { <br>
+                        if (x[i] == 'B' || x[i] == 'b') { <br>
+                            count++; <br>
+                        } <br>
+                        else { <br>
+                            ;<br>
+                        } <br>
+                    } <br>
+                    return count; <br>
+                } <br>
+                            
+                const countChar = (x, y) => { <br>
+                    var count = 0; <br>
+                    for (var i = 0; i &lt; x.length; i++) { <br>
+                        if (x[i] == y) { <br>
+                            count++; <br>
+                        } <br>
+                        else { <br>
+                            ; <br>
+                        } <br>
+                    } <br>
+                    return count; <br>
+                } <br>
+                 
+            </code>
         </div>
 
         <h2>Week 2 team activity:</h2>
         <div class='teamActivity'>
-            <a href="../week1/ta01.html">Week 2 Team Assignment</a>
+            <a href="../week1/ta01.html"><button>Week 2 Team Assignment</button></a>
         </div>
 
-        <div class='meSection'>
-            <img class='meImage' src="../images/me.png" alt="Me">
-        </div>
     </main>
     <footer>
-        &copy Jordan Dickson 2020
+        <img class='meImage' src="../images/me.png" alt="Me"> <span style='padding-bottom: 10px;'>&copy Jordan Dickson 2020</span>
     </footer>
 
 
