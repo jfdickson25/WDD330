@@ -24,12 +24,69 @@
 
         <h2>Week 3 Notes:</h2>
         <div class='notes'>
-            <p></p>
+            <p>The document.querySelector() method allows you to use CSS notation to find thefirstelement in the document that matches that matches a CSS selector provided as an argument. If no elements match, it will return null. </p>
+
+            <p>The document.querySelectorAll() method also uses CSS notation but returns a node list ofallthe elements in the document that match the CSS query selector. If no elements match, it will return an empty node list.</p>
+                
+            <p>These are both very powerful methods that can emulate all the methods discussed, as well as allowing more fine-grained control over which element nodes are returned.</p>
+            <p>
+                Event listeners are added to elements on the page and are part of the DOM that we met in the last
+                chapter.
+                In the example above, the event listener has been added to the document’s body element. It will call the
+                function doSomething() when any part of the page is clicked on. Until that happens, the program will
+                continue
+                to run the rest of the code.
+            </p>
+            <p>
+                An event listener can be removed using the removeEventListener() method. To see an example, add this
+                line to events.html : </p>
+
+                <p>Now add the following code to main.js :</p>
+
+                const onceParagraph = document.getElementById('once'); <br>
+                onceParagraph.addEventListener('click', remove); <br>
+                function remove(event) { <br>
+                console.log('Enjoy this while it lasts!'); <br>
+                onceParagraph.style.backgroundColor = 'pink'; <br>
+                onceParagraph.removeEventListener('click',remove); <br>
+                } <br>
+                
+                <p>This adds a click event listener to a paragraph element, but then removes it in the callback function
+                    named remove . This means it will only be called once (try clicking on it again and nothing happens).</p> 
         </div>
 
         <h2>Week 3 code examples:</h2>
         <div class='notes'>
-            <code></code>
+            <h4>Object Example code:</h4>
+            <code>
+                let character = { <br>
+                first_name: 'Luke', <br>
+                last_name: 'Skywalker', <br>
+                age: 20, <br>
+                lightsaber_color: 'green' <br>
+                }
+
+                document.getElementById('character').innerHTML = <br>
+                'Name: ' + character.first_name + ' ' + character.last_name + <br>
+                'Age: ' + character.age + <br>
+                'Lightsaber Color: ' + character.lightsaber_color;<br>
+            </code>
+            <h4>Result:</h4>
+            <div id='character'></div>
+
+            <h4>Toggle Added to word Green to change color</h4>
+            <code>
+                const changeColor = (event) => { <br>
+                event.target.classList.toggle('highlight'); <br>
+                } <br>
+                const mouseParagraph = document.getElementById('color'); <br>
+                mouseParagraph.addEventListener('click', changeColor); <br>
+            </code>
+        </div>
+
+        <h2>Week 3 team activity:</h2>
+        <div class='teamActivity'>
+            <a href="ta03.html"><button>Week 3 Team Assignment</button></a>
         </div>
 
         <div class='meSection'>
@@ -41,7 +98,7 @@
     </footer>
 
 
-    <script src="../scripts/index.js"></script>
+    <script src="../scripts/week3.js"></script>
 </body>
 
 </html>
