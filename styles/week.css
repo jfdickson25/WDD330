@@ -62,8 +62,12 @@ code {
   font-size: 6pt;
 }
 
+small p {
+  color: red;
+}
+
 small {
-  color: blue
+  color: blue;
 }
 
 .show li {

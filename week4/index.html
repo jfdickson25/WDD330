@@ -77,9 +77,9 @@
                 } <br>
             </code>
 
-            <p>We can actually stop the form from being submitted to that URL altogether by using the preventDefault()
+           <small><p>We can actually stop the form from being submitted to that URL altogether by using the preventDefault()
                 method that we saw in the last chapter. Add the following line to the search function:
-            </p>
+            </p></small>
 
             <code>
                 function search(event) { <br>
@@ -87,6 +87,17 @@
                 event.preventDefault(); <br>
                 } <br>
             </code>
+
+            <small><p>Underscore & Lodash</p></small>
+            <code>// flatten an array <br>
+                _.flatten([1, [2, [3, [4]], 5]]); <br>
+                 [1, 2, [3, [4]], 5] <br>
+                // return the last element in an array <br>
+                _.last([1, 2, 3]); <br>
+                 3 <br>
+                // randomly shuffle an array <br>
+                _.shuffle([1, 2, 3, 4]); <br>
+                // => [4, 1, 3, 2]</code>
         </div>
 
         <h2>Week 4 team activity:</h2>
