@@ -62,6 +62,10 @@ code {
   font-size: 6pt;
 }
 
+small {
+  color: blue
+}
+
 .show li {
   display: block;
   width: 100%;
