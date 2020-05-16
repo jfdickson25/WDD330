@@ -18,17 +18,80 @@
             <li><a href="../week2">Week 2</a></li>
             <li><a href="../week3">Week 3</a></li>
             <li><a href="#">Week 4</a></li>
+            <li><a href="../week5">Week 5</a></li>
         </ul>
     </header>
     <main>
         <h2>Week 4 Notes:</h2>
         <div class='notes'>
-            <p></p>
+            <p>The legacy DOM had a useful property called document.forms that returns an HTML collection of all
+                the forms in the document in the order they appear in the markup. Even though there is only one form
+                in our example, a collection will still be returned, so we have to use index notation to return the
+                first (and only) form object, like so:</p>
+            <p>Be careful referencing elements in this way, however. If the form had the same name as any properties or
+                methods of the document.
+                forms object, such as 'submit', for example, that property or method would be referenced instead of the
+                form element. This is unlikely
+                to happen, as the document.form object doesn't have many properties or methods, but it is something to
+                be aware of. To avoid this, square
+                bracket notation can be used (this is also required if the form’s name attribute contains any invalid
+                characters, such as spaces or dashes):</p>
+            <p>We can also access the form controls using their 'name' attributes as if it was a property of the form
+                object.
+                So, for example, the input field has a name attribute of searchInput and can be accessed using this
+                code:
+
+                const input = form['searchInput']</p>
+
+            <p>The form.reset() method will reset all the form controls back to their initial values specified in the
+                HTML.
+
+                A button with a type attribute of reset can also be used to do this without the need for additional
+                scripting:
+
+                button type='reset' Reset /button</p>
+            <p><h3>DOM Manipulation Example</h3>
+                A good example of how libraries can help save time is in DOM manipulation. The DOM API provides all the
+                tools required to manipulate the DOM, but some can be verbose and take several lines of code to attain
+                even the most basic of tasks. <br><br>
+
+                For example, if we wanted to add a class to a paragraph element referenced by the variable para , then
+                append another paragraph on the end, we could do it using the following: <br><br>
+
+                para.classList.add('important');<br><br>
+                const newPara = document.createElement('p');<br><br>
+                newPara.textContent = 'Another Paragraph';<br><br>
+                para.appendChild(newPara);<br><br>
+                Yet by using the jQuery library, we can achieve the same result using a single line of code: <br><br>
+
+                $(para).addClass('important').append('Another Paragraph');</p>
         </div>
 
         <h2>Week 4 code examples:</h2>
         <div class='notes'>
-            <code></code>
+            <code>
+                const form = document.forms['search']; <br>
+                form.addEventListener ('submit', search, false); <br>
+                function search() { <br>
+                alert(' Form Submitted'); <br>
+                } <br>
+            </code>
+
+            <p>We can actually stop the form from being submitted to that URL altogether by using the preventDefault()
+                method that we saw in the last chapter. Add the following line to the search function:
+            </p>
+
+            <code>
+                function search(event) { <br>
+                alert('Form Submitted'); <br>
+                event.preventDefault(); <br>
+                } <br>
+            </code>
+        </div>
+
+        <h2>Week 4 team activity:</h2>
+        <div class='teamActivity'>
+            <a href="ta04.html"><button>Week 3 Team Assignment</button></a>
         </div>
 
         <div class='meSection'>

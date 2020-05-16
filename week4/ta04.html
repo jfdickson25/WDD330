@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Week 4 Team Activity</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        td {
+            width: 100px;
+            height: 100px;
+        }
+
+        .vertical {
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+        }
+
+        .horozontal {
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+        }
+
+        table {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tic Tac Toe Game</h1>
+    <table>
+        <tr>
+            <td onclick="tap('box1')" id="box1"></td>
+            <td onclick="tap('box2')" id="box2" class="vertical"></td>
+            <td onclick="tap('box3')" id="box3"></td>
+        </tr>
+        <tr>
+            <td onclick="tap('box4')" id="box4" class="horozontal"></td>
+            <td onclick="tap('box5')" id="box5" class="vertical horozontal"></td>
+            <td onclick="tap('box6')" id="box6" class="horozontal"></td>
+        </tr>
+        <tr>
+            <td onclick="tap('box7')" id="box7"></td>
+            <td onclick="tap('box8')" id="box8" class="vertical"></td>
+            <td onclick="tap('box9')" id="box9"></td>
+        </tr>
+    </table>
+    
+    <button onclick="reset()">Reset</button>
+
+
+</body>
+<script src="teamActivity.js"></script>
+
+</html>
