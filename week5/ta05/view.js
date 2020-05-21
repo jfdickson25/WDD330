@@ -42,13 +42,15 @@ class View {
     <img src='arrows.png' alt='back' class='back' id='back'>
     <table id="${hikeInfo.id}">
     <tr>
-    <th colspan="2"><h2>${hikeInfo.name}</h2></th>
+    <th><h2>${hikeInfo.name}</h2></th>
     </tr>
     <tr>
       <td>
         <img class='details' src="${hikeInfo.imgSrc}" alt="${hikeInfo.imgAlt}">
       </td>
-      <td>
+    </tr>
+    <tr>
+      <td style='padding: 10px'>
                     <h3>Distance</h3>
                     <p>${hikeInfo.distance}</p>
                     <h3>Difficulty</h3>
