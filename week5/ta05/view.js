@@ -51,13 +51,13 @@ class View {
     </tr>
     <tr>
       <td style='padding: 10px'>
-                    <h3>Distance</h3>
+                    <h3>Distance:</h3>
                     <p>${hikeInfo.distance}</p>
-                    <h3>Difficulty</h3>
+                    <h3>Difficulty:</h3>
                     <p>${hikeInfo.difficulty}</p>
-                    <h3>Description</h3>
+                    <h3>Description:</h3>
                     <p>${hikeInfo.description}</p>
-                    <h3>Directions</h3>
+                    <h3>Directions:</h3>
                     <p>${hikeInfo.directions}</p>
       </td>
     </tr>
