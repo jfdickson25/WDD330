@@ -7,15 +7,32 @@ const controller = new Todo('todo');
  window.addEventListener('load', () => {
    controller.showTodoList();
    otherEventListeners();
+   trashEventListeners();
+   newTaskEventListener();
 
  });
 
- function otherEventListeners() {
+ function trashEventListeners() {
+    let elementsArray = document.querySelectorAll('.trashImg');
+    elementsArray.forEach(elem => {
+        let id = elem.id;
+        console.log("Element Id: ", id);
 
+        //for loop where id is equal to local storage id
+        document.getElementById(id).addEventListener("touchend", function() { 
+            let index = id.split('h')[1];
+            controller.removeTask(index);
+        });
+    });
+ }
+
+ function newTaskEventListener() {
     document.getElementById('newTask').addEventListener("touchend", function() {
-        console.log("Got here");
         controller.addTask(document.getElementById('task').value);
     });
+ }
+
+ function otherEventListeners() {
 
     let elementsArray = document.querySelectorAll('.check');
     

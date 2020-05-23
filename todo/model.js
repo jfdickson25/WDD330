@@ -30,6 +30,14 @@ class Model {
     localStorage.task = JSON.stringify(task);
   }
 
+  removeTask(id) {
+    task = JSON.parse(localStorage.task);
+    let taskToDelete = task.find(element => element.id === Number(id));
+    let index = task.indexOf(taskToDelete);
+    task.splice(index, 1);
+    localStorage.task = JSON.stringify(task);
+  }
+
 
 }
 

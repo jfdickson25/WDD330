@@ -16,7 +16,10 @@ export default class Todo {
     addTask(description) {
       this.Model.addTask(description);
       window.location.reload();
-      // const todoList = this.Model.getAllTask();
-      // this.Views.renderTodoList(this.element, todoList);
+    }
+
+    removeTask(id) {
+      this.Model.removeTask(id);
+      window.location.reload();
     }
 }

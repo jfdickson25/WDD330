@@ -18,7 +18,7 @@ class View {
                 </td>
                 <td class='CheckInfo'>${todoInfo.description}</td>
                 <td class='checkTrash'>
-                    <img class='trashImg' src="./img/trash.png" alt="Check mark">
+                    <img id='trash${todoInfo.id}' class='trashImg' src="./img/trash.png" alt="Check mark">
                 </td>
             </table>`;
         }
@@ -30,7 +30,7 @@ class View {
                 </td>
                 <td class='CheckInfo'>${todoInfo.description}</td>
                 <td class='checkTrash'>
-                    <img class='trashImg' src="./img/trash.png" alt="Check mark">
+                    <img id='trash${todoInfo.id}' class='trashImg' src="./img/trash.png" alt="Check mark">
                 </td>
             </table>`; 
         }
