@@ -36,6 +36,7 @@ class Model {
     let index = task.indexOf(taskToDelete);
     task.splice(index, 1);
     localStorage.task = JSON.stringify(task);
+    return;
   }
 
 

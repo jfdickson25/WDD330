@@ -1,6 +1,7 @@
 // Teacher solution helped me to know how to set up the view
 class View {
     renderTodoList(todoElement, todos) {
+        document.getElementById('todo').innerHTML = '';
         todos.forEach(todo => {
             // Teacher solution helped
             todoElement.appendChild(this.renderOneTodo(todo));
