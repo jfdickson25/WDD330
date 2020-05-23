@@ -9,7 +9,14 @@ export default class Todo {
     }
 
     showTodoList() {
-        const todoList = this.Model.getAllTodo();
+        const todoList = this.Model.getAllTask();
         this.Views.renderTodoList(this.element, todoList);
+    }
+
+    addTask(description) {
+      this.Model.addTask(description);
+      window.location.reload();
+      // const todoList = this.Model.getAllTask();
+      // this.Views.renderTodoList(this.element, todoList);
     }
 }

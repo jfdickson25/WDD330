@@ -1,6 +1,8 @@
 import Todo from './controller.js';
 const controller = new Todo('todo');
 
+// Add event listener for submission of new task then get value and insert it
+
 
  window.addEventListener('load', () => {
    controller.showTodoList();
@@ -9,10 +11,17 @@ const controller = new Todo('todo');
  });
 
  function otherEventListeners() {
-    let elementsArray = document.querySelectorAll("img");
+
+    document.getElementById('newTask').addEventListener("touchend", function() {
+        console.log("Got here");
+        controller.addTask(document.getElementById('task').value);
+    });
+
+    let elementsArray = document.querySelectorAll('.check');
     
     elementsArray.forEach(elem => {
         let id = elem.id;
+        console.log("Element Id: ", id);
 
         //for loop where id is equal to local storage id
         document.getElementById(id).addEventListener("touchend", function() {
