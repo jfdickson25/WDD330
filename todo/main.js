@@ -5,6 +5,7 @@ const controller = new Todo('todo');
  window.addEventListener('load', () => {
    controller.showTodoList();
    otherEventListeners();
+
  });
 
  function otherEventListeners() {

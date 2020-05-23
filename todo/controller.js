@@ -10,7 +10,6 @@ export default class Todo {
 
     showTodoList() {
         const todoList = this.Model.getAllTodo();
-        localStorage.todos = JSON.stringify(todoList);
         this.Views.renderTodoList(this.element, todoList);
     }
 }
