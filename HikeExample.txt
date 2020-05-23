@@ -1,0 +1,21 @@
+import { Todo } from './todo.js';
+
+let todo = [];
+
+let task1 = new Todo('Wash dishes');
+let task2 = new Todo('Buy groceries');
+let task3 = new Todo('Make dinner');
+
+todo.push(task1);
+todo.push(task2);
+todo.push(task3);
+
+if(localStorage.todo) {
+    let additionalTasks = JSON.parse(localStorage.todo);
+    let task4 = new Todo('Go to the bank');
+    additionalTasks.push(task4);
+    console.log(additionalTasks);
+}
+localStorage.todo = JSON.stringify(todo);
+
+console.log(localStorage.todo);
