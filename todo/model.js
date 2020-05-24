@@ -31,8 +31,6 @@ class Model {
     localStorage.task = JSON.stringify(task);
     return;
   }
-
-
 }
 
 export default Model;
