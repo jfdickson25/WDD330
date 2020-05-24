@@ -15,8 +15,7 @@ export default class Todo {
 
     addTask(description) {
       this.Model.addTask(description);
-      const todoList = JSON.parse(localStorage.task);
-      this.Views.renderTodoList(this.element, todoList);
+      window.location.reload();
     }
 
     removeTask(id) {
