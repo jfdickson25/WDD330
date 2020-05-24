@@ -14,6 +14,19 @@ class Model {
     return tasks;
   }
 
+  getTasksFiltered(status) {
+    let tasks = JSON.parse(localStorage.task);
+    let filtederedList = [];
+    tasks.forEach(task => {
+      if (task.completed == status) {
+        filteredList.push(task);
+      }
+    });
+    
+    return filtederedList;
+
+  }
+
   addTask(description) {
     task = JSON.parse(localStorage.task);
     let index = (Number(task.length));
@@ -32,11 +45,12 @@ class Model {
     return;
   }
 
-  setComplete(complete, id) {
+  setComplete(completed, id) {
     task = JSON.parse(localStorage.task);
     let taskToDelete = task.find(element => element.id === Number(id));
     let index = task.indexOf(taskToDelete);
-    console.log(task[index]);
+    task[index].complete = completed;
+    localStorage.task = JSON.stringify(task);
   }
 }
 

@@ -8,6 +8,12 @@ export default class Todo {
     this.Views = new Views();
   }
 
+  filterTasks(taskStatus) {
+    const todoListFiltered = this.Model.getTasksFiltered(taskStatus);
+    console.log(todoListFiltered);
+    //this.Views.renderTodoListFiltered(this.element, todoListFiltered);
+  }
+
   showTodoList() {
     const todoList = this.Model.getAllTask();
     this.Views.renderTodoList(this.element, todoList);
@@ -15,7 +21,6 @@ export default class Todo {
 
   addTask(description) {
     this.Model.addTask(description);
-    window.location.reload();
   }
 
   removeTask(id) {

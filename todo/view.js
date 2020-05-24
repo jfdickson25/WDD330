@@ -15,7 +15,7 @@ class View {
             item.innerHTML = ` 
             <table>
                 <td class='checkImg'>
-                    <img id=${todoInfo.id} class='check' src="./img/checked.png" alt="Check mark" value=${todoInfo.complete}>
+                    <img id=${todoInfo.id} class='check' src="./img/checked.png" alt="${todoInfo.complete}">
                 </td>
                 <td class='CheckInfo'>${todoInfo.description}</td>
                 <td class='checkTrash'>
@@ -27,7 +27,7 @@ class View {
             item.innerHTML = ` 
             <table>
                 <td class='checkImg'>
-                    <img id=${todoInfo.id} class='check' src="./img/unchecked.png" alt="Check mark" value=${todoInfo.complete}>
+                    <img id=${todoInfo.id} class='check' src="./img/unchecked.png" alt="${todoInfo.complete}">
                 </td>
                 <td class='CheckInfo'>${todoInfo.description}</td>
                 <td class='checkTrash'>
