@@ -9,10 +9,19 @@ const controller = new Todo('todoList');
    otherEventListeners();
    trashEventListeners();
    newTaskEventListener();
+   allEventListener();
    finishedEventListener();
    unfinishedEventListener();
 
  });
+
+ function allEventListener() {
+    document.getElementById('all').addEventListener("touchend", function() {
+        controller.showTodoList();
+        otherEventListeners();
+        trashEventListeners();
+    });
+}
 
  function finishedEventListener() {
      document.getElementById('finished').addEventListener("touchend", function() {
