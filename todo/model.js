@@ -31,6 +31,13 @@ class Model {
     localStorage.task = JSON.stringify(task);
     return;
   }
+
+  setComplete(complete, id) {
+    task = JSON.parse(localStorage.task);
+    let taskToDelete = task.find(element => element.id === Number(id));
+    let index = task.indexOf(taskToDelete);
+    console.log(task[index]);
+  }
 }
 
 export default Model;

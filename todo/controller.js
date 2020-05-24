@@ -22,4 +22,8 @@ export default class Todo {
     this.Model.removeTask(id);
     window.location.reload();
   }
+
+  setComplete(complete, id) {
+    this.Model.setComplete(complete, id);
+  }
 }

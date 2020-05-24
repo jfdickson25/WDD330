@@ -44,11 +44,11 @@ const controller = new Todo('todo');
         document.getElementById(id).addEventListener("touchend", function() {
             if(document.getElementById(id).value) {
                 document.getElementById(id).src = './img/unchecked.png';
-                document.getElementById(id).value = false;
+                controller.setComplete(false, id);
             }
             else {
                 document.getElementById(id).src = './img/checked.png';
-                document.getElementById(id).value = true;
+                controller.setComplete(true, id);
             }
         });
     });
