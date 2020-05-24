@@ -16,9 +16,28 @@ h1 {
     font-size: 28pt;
     font-family: 'Courier New', Courier, monospace;
 }
-td {
-    padding: 5px;
+
+th {
+    border-collapse: collapse;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 11pt;
+    font-family: 'Courier New', Courier, monospace;
 }
+
+td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    width: 100%;
+}
+
 
 input[type="text"] {
     font-size: 16px;
@@ -72,7 +91,7 @@ button {
 }
 
 .selection {
-    padding: 10px;
+    border-collapse: collapse;
 }
 
 .check {
@@ -82,14 +101,16 @@ button {
 }
 
 .checkbox {
-    height: 40px;
-    width: 40px;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
     background-color: white;
     border-radius: 5px;
 }
 
 .option {
     font-weight: bold;
+    text-align: center;
 }
 
 .checkImg {
@@ -113,6 +134,11 @@ button {
     left: 0px;
     margin-bottom: 40px;
     
+}
+
+.labels {
+    background-color: black;
+    color: white;
 }
 
 
