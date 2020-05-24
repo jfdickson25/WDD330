@@ -15,13 +15,13 @@ const controller = new Todo('todo');
  });
 
  function finishedEventListener() {
-     document.getElementById('finished').addEventListener("touchend", function {
+     document.getElementById('finished').addEventListener("touchend", function() {
          controller.filterTasks(true);
      });
  }
 
  function unfinishedEventListener() {
-    document.getElementById('finished').addEventListener("touchend", function {
+    document.getElementById('finished').addEventListener("touchend", function() {
         controller.filterTasks(false);
     });
 }
