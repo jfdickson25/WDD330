@@ -1,8 +1,6 @@
 import Todo from './controller.js';
 const controller = new Todo('todoList');
 
-// Add event listener for submission of new task then get value and insert it
-
 
  window.addEventListener('load', () => {
    controller.showTodoList();
