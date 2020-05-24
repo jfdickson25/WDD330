@@ -17,12 +17,16 @@ const controller = new Todo('todoList');
  function finishedEventListener() {
      document.getElementById('finished').addEventListener("touchend", function() {
          controller.filterTasks(true);
+         otherEventListeners();
+        trashEventListeners();
      });
  }
 
  function unfinishedEventListener() {
     document.getElementById('unfinished').addEventListener("touchend", function() {
         controller.filterTasks(false);
+        otherEventListeners();
+        trashEventListeners();
     });
 }
 
@@ -65,13 +69,13 @@ const controller = new Todo('todoList');
             if(document.getElementById(id).alt == "true") {
                 document.getElementById(id).src = './img/unchecked.png';
                 controller.setComplete(false, id);
-                document.getElementById(id).alt == "false";
+                document.getElementById(id).alt = "false";
 
             }
             else {
                 document.getElementById(id).src = './img/checked.png';
                 controller.setComplete(true, id);
-                document.getElementById(id).alt == "true"
+                document.getElementById(id).alt = "true"
             }
         });
     });
