@@ -1,5 +1,5 @@
 import Todo from './controller.js';
-const controller = new Todo('todo');
+const controller = new Todo('todoList');
 
 // Add event listener for submission of new task then get value and insert it
 
@@ -21,7 +21,7 @@ const controller = new Todo('todo');
  }
 
  function unfinishedEventListener() {
-    document.getElementById('finished').addEventListener("touchend", function() {
+    document.getElementById('unfinished').addEventListener("touchend", function() {
         controller.filterTasks(false);
     });
 }
@@ -36,6 +36,8 @@ const controller = new Todo('todo');
         document.getElementById(id).addEventListener("touchend", function() { 
             let index = id.split('h')[1];
             controller.removeTask(index);
+            otherEventListeners();
+            trashEventListeners();
         });
     });
  }

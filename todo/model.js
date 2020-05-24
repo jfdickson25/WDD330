@@ -16,14 +16,14 @@ class Model {
 
   getTasksFiltered(status) {
     let tasks = JSON.parse(localStorage.task);
-    let filtederedList = [];
+    let filteredList = [];
     tasks.forEach(task => {
-      if (task.completed == status) {
+      if (task.complete == status) {
         filteredList.push(task);
       }
     });
     
-    return filtederedList;
+    return filteredList;
 
   }
 

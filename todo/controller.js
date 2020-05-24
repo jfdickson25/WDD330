@@ -4,14 +4,14 @@ import Views from './view.js';
 export default class Todo {
   constructor(todoId) {
     this.element = document.getElementById(todoId),
-      this.Model = new Model();
+    this.Model = new Model();
     this.Views = new Views();
   }
 
   filterTasks(taskStatus) {
     const todoListFiltered = this.Model.getTasksFiltered(taskStatus);
     console.log(todoListFiltered);
-    //this.Views.renderTodoListFiltered(this.element, todoListFiltered);
+    this.Views.renderTodoList(this.element, todoListFiltered);
   }
 
   showTodoList() {
@@ -25,7 +25,8 @@ export default class Todo {
 
   removeTask(id) {
     this.Model.removeTask(id);
-    window.location.reload();
+    const todoList = this.Model.getAllTask();
+    this.Views.renderTodoList(this.element, todoList);
   }
 
   setComplete(complete, id) {
