@@ -2,14 +2,6 @@ import { Task } from './task.js';
 
 let task = [];
 
-let task1 = new Task('Wash dishes', 0);
-let task2 = new Task('Buy groceries', 1);
-let task3 = new Task('Make dinner', 2);
-
-task.push(task1);
-task.push(task2);
-task.push(task3);
-
 if(!localStorage.task) {
   localStorage.task = JSON.stringify(task);
 }
@@ -18,7 +10,8 @@ console.log(localStorage.task);
 
 class Model {
   getAllTask() {
-    return JSON.parse(localStorage.task);
+    let tasks = JSON.parse(localStorage.task);
+    return tasks;
   }
 
   addTask(description) {
@@ -28,6 +21,7 @@ class Model {
     task.push(newTask);
     console.log(task);
     localStorage.task = JSON.stringify(task);
+    return index;
   }
 
   removeTask(id) {
