@@ -24,12 +24,94 @@
     <main>
         <h2>Week 5 Notes:</h2>
         <div class='notes'>
-            <p></p>
+            <h3>3 Types of errors:</h3>
+            <ol>
+                <li>System error ― there’s a problem with the system or external devices with which the program is
+                    interacting.</li>
+
+                <li>Programmer error ― the program contains incorrect syntax or faulty logic; it could even be as simple
+                    as
+                    a typo.</li>
+
+                <li>User error ― the user has entered data incorrectly, which the program is unable to handle.</li>
+            </ol>
+
+            <p>One of the most useful commands is the debugger keyword. This will create a breakpoint in your code
+                that will pause the execution of the code and allow you to see where the program is currently up to.
+                You can also hover over any variables to see what value they hold at that point. The program can then
+                be restarted by clicking on the 'play' button.</p>
+
+            <h3>5 Steps to test driven development</h3>
+            <ol>
+                <li>Write tests (that initially fail)</li>
+
+                <li>>Write code to pass the tests</li>
+
+                <li>Refactor the code</li>
+
+                <li>>Test refactored code</li>
+
+                <li>>Write more tests for new features</li>
+            </ol>
+
         </div>
 
         <h2>Week 5 code examples:</h2>
         <div class='notes'>
+            <h3>Debugger Example</h3>
             <code>
+                function amIOldEnough(age){<br>
+                debugger;<br>
+                if (age &lt; 12) {<br>
+                debugger;<br>
+                return 'No, sorry.'<br>
+                } else if (age &lt; 18) {<br>
+                debugger;<br>
+                return 'Only if you are accompanied by an adult.';<br>
+                } else { <br>
+                debugger;<br>
+                return 'Yep, come on in!';<br>
+                }
+                }
+                amIOldEnough(16);
+            </code>
+
+            <h3>Project 1 code: (Model)</h3>
+            <code>
+                import { Task } from './task.js';<br>
+
+                let task = [];<br>
+
+                if(!localStorage.task) {<br>
+                localStorage.task = JSON.stringify(task);<br>
+                } <br>
+
+                console.log(localStorage.task);<br>
+
+                class Model {<br>
+                getAllTask() {<br>
+                let tasks = JSON.parse(localStorage.task);<br>
+                return tasks;<br>
+                } <br>
+
+                addTask(description) {<br>
+                task = JSON.parse(localStorage.task);<br>
+                let index = (Number(task.length));<br>
+                let newTask = new Task(description, index);<br>
+                task.push(newTask);<br>
+                console.log(task);<br>
+                localStorage.task = JSON.stringify(task);<br>
+                } <br>
+
+                removeTask(id) {<br>
+                task = JSON.parse(localStorage.task);<br>
+                let taskToDelete = task.find(element => element.id === Number(id));<br>
+                let index = task.indexOf(taskToDelete);<br>
+                task.splice(index, 1);<br>
+                localStorage.task = JSON.stringify(task);<br>
+                return;<br>
+                } <br>
+                } <br>
             </code>
         </div>
 

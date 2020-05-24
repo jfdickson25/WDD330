@@ -21,7 +21,6 @@ class Model {
     task.push(newTask);
     console.log(task);
     localStorage.task = JSON.stringify(task);
-    return index;
   }
 
   removeTask(id) {
