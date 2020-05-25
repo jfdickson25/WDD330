@@ -29,11 +29,20 @@ class Model {
 
   addTask(description) {
     task = JSON.parse(localStorage.task);
-    let index = (Number(task.length));
-    let newTask = new Task(description, index);
-    task.push(newTask);
-    console.log(task);
-    localStorage.task = JSON.stringify(task);
+    if (task.length > 0) {
+      let index = (Number(task.length) - 1);
+      let lastElement = task[index].id;
+      let newTask = new Task(description, lastElement + 1);
+      task.push(newTask);
+      console.log(task);
+      localStorage.task = JSON.stringify(task);
+    }
+    else {
+      let newTask = new Task(description, 0);
+      task.push(newTask);
+      console.log(task);
+      localStorage.task = JSON.stringify(task);
+    }
   }
 
   removeTask(id) {

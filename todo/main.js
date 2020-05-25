@@ -59,6 +59,9 @@ const controller = new Todo('todoList');
         controller.showTodoList();
         otherEventListeners();
         trashEventListeners();
+        allEventListener();
+        finishedEventListener();
+        unfinishedEventListener();
     });
  }
 
