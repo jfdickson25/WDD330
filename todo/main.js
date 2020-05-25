@@ -56,12 +56,12 @@ const controller = new Todo('todoList');
  function newTaskEventListener() {
     document.getElementById('newTask').addEventListener("touchend", function() {
         controller.addTask(document.getElementById('task').value);
-        controller.showTodoList();
         otherEventListeners();
         trashEventListeners();
         allEventListener();
         finishedEventListener();
         unfinishedEventListener();
+        controller.showTodoList();
     });
  }
 
