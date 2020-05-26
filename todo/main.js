@@ -11,7 +11,35 @@ const controller = new Todo('todoList');
    finishedEventListener();
    unfinishedEventListener();
 
+   optionsAllEventListener();
+   optionsFinishedEventListener();
+   optionsUnfinishedEventListener();
+
  });
+
+ function optionsAllEventListener() {
+    document.getElementById('all').addEventListener('touchend', function() {
+        document.getElementById('finished').style.backgroundColor = 'white';
+        document.getElementById('unfinished').style.backgroundColor = 'white';
+        document.getElementById('all').style.backgroundColor = 'black';
+    });
+ }
+
+ function optionsFinishedEventListener() {
+    document.getElementById('finished').addEventListener('touchend', function() {
+        document.getElementById('finished').style.backgroundColor = 'black';
+        document.getElementById('unfinished').style.backgroundColor = 'white';
+        document.getElementById('all').style.backgroundColor = 'white';
+    });
+}
+
+function optionsUnfinishedEventListener() {
+    document.getElementById('unfinished').addEventListener('touchend', function() {
+        document.getElementById('finished').style.backgroundColor = 'white';
+        document.getElementById('unfinished').style.backgroundColor = 'black';
+        document.getElementById('all').style.backgroundColor = 'white';
+    });
+}
 
  function allEventListener() {
     document.getElementById('all').addEventListener("touchend", function() {
