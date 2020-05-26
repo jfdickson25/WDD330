@@ -25,8 +25,16 @@ export default class Todo {
 
   removeTask(id) {
     this.Model.removeTask(id);
-    const todoList = this.Model.getAllTask();
-    this.Views.renderTodoList(this.element, todoList);
+    if (document.getElementById('all').style.backgroundColor != 'white') {
+      const todoList = this.Model.getAllTask();
+      this.Views.renderTodoList(this.element, todoList);
+    }
+    else if (document.getElementById('finished').style.backgroundColor != 'white'){
+      this.filterTasks(true);
+    }
+    else {
+      this.filterTasks(false);
+    }
   }
 
   setComplete(complete, id) {
