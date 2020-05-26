@@ -1,7 +1,7 @@
 body, html {
     margin: 0px;
     padding: 0px;
-    background-image: url('./img/backdrop.jpg');
+    background-image: url('./img/backdrop1.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
@@ -137,7 +137,7 @@ button {
 }
 
 .labels {
-    background-color: black;
+    background-color: grey;
     color: white;
 }
 
@@ -146,7 +146,7 @@ button {
 }
 
 #all {
-    background-color: black;
+    background-color: #5F7D95;
     
 }
 

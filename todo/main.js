@@ -21,13 +21,13 @@ const controller = new Todo('todoList');
     document.getElementById('all').addEventListener('touchend', function() {
         document.getElementById('finished').style.backgroundColor = 'white';
         document.getElementById('unfinished').style.backgroundColor = 'white';
-        document.getElementById('all').style.backgroundColor = 'black';
+        document.getElementById('all').style.backgroundColor = '#5F7D95';
     });
  }
 
  function optionsFinishedEventListener() {
     document.getElementById('finished').addEventListener('touchend', function() {
-        document.getElementById('finished').style.backgroundColor = 'black';
+        document.getElementById('finished').style.backgroundColor = '#5F7D95';
         document.getElementById('unfinished').style.backgroundColor = 'white';
         document.getElementById('all').style.backgroundColor = 'white';
     });
@@ -36,7 +36,7 @@ const controller = new Todo('todoList');
 function optionsUnfinishedEventListener() {
     document.getElementById('unfinished').addEventListener('touchend', function() {
         document.getElementById('finished').style.backgroundColor = 'white';
-        document.getElementById('unfinished').style.backgroundColor = 'black';
+        document.getElementById('unfinished').style.backgroundColor = '#5F7D95';
         document.getElementById('all').style.backgroundColor = 'white';
     });
 }
