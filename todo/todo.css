@@ -141,6 +141,15 @@ button {
     color: white;
 }
 
+.strike {
+    text-decoration: line-through;
+}
+
+#all {
+    background-color: black;
+    
+}
+
 
 
 

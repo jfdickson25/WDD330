@@ -103,6 +103,9 @@ function optionsUnfinishedEventListener() {
 
         //for loop where id is equal to local storage id
         document.getElementById(id).addEventListener("touchend", function() {
+            var element = document.getElementById('desc' + String(id));
+            element.classList.toggle("strike");
+
             console.log("Here is the value: ", document.getElementById(id).alt);
             if(document.getElementById(id).alt == "true") {
                 document.getElementById(id).src = './img/unchecked.png';

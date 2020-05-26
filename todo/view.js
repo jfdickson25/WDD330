@@ -17,7 +17,9 @@ class View {
                 <td class='checkImg'>
                     <img id=${todoInfo.id} class='check' src="./img/checked.png" alt="${todoInfo.complete}">
                 </td>
-                <td class='CheckInfo'>${todoInfo.description}</td>
+                <td class='CheckInfo'>
+                    <p id='desc${todoInfo.id}' class='strike'>${todoInfo.description}</p>
+                </td>
                 <td class='checkTrash'>
                     <img id='trash${todoInfo.id}' class='trashImg' src="./img/trash.png" alt="Check mark">
                 </td>
@@ -29,7 +31,9 @@ class View {
                 <td class='checkImg'>
                     <img id=${todoInfo.id} class='check' src="./img/unchecked.png" alt="${todoInfo.complete}">
                 </td>
-                <td class='CheckInfo'>${todoInfo.description}</td>
+                <td class='CheckInfo'>
+                    <p id='desc${todoInfo.id}'>${todoInfo.description}</p>
+                </td>
                 <td class='checkTrash'>
                     <img id='trash${todoInfo.id}' class='trashImg' src="./img/trash.png" alt="Check mark">
                 </td>
