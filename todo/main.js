@@ -84,6 +84,7 @@ function optionsUnfinishedEventListener() {
  function newTaskEventListener() {
     document.getElementById('newTask').addEventListener("touchend", function() {
         controller.addTask(document.getElementById('task').value);
+        document.getElementById('task').value = "";
         controller.showTodoList();
         otherEventListeners();
         trashEventListeners();
