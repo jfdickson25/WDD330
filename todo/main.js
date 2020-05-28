@@ -86,6 +86,9 @@ function optionsUnfinishedEventListener() {
         controller.addTask(document.getElementById('task').value);
         document.getElementById('task').value = "";
         controller.showTodoList();
+        document.getElementById('finished').style.backgroundColor = 'white';
+        document.getElementById('unfinished').style.backgroundColor = 'white';
+        document.getElementById('all').style.backgroundColor = '#5F7D95';
         otherEventListeners();
         trashEventListeners();
         allEventListener();
