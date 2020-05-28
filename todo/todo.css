@@ -161,7 +161,9 @@ button {
 
 
 
-/* The Modal (background) */
+/************************************************************
+  * W3 Schools modal CSS 
+  ************************************************************/
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */

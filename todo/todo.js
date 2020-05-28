@@ -1,3 +1,7 @@
+/***********************************************************
+* W3 School Modal Javascript 
+***********************************************************/
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
