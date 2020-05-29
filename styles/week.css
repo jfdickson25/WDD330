@@ -121,6 +121,23 @@ small {
 }
 
 
+.todoApp button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: green;
+  color: white;
+  padding: 5px;
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
+}
+
+.todoApp button:hover {
+  transform: scale(1.2);
+}
+
+
 
 
 

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6</title>
+    <link rel="stylesheet" href="../styles/week.css">
+</head>
+
+<header>
+    <ul id='navigation'>
+        <li id='menu'><a href="#">&#9776; Menu </a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../week1">Week 1</a></li>
+        <li><a href="../week2">Week 2</a></li>
+        <li><a href="../week3">Week 3</a></li>
+        <li><a href="../week4">Week 4</a></li>
+        <li><a href="../week5">Week 5</a></li>
+        <li><a href="#">Week 6</a></li>
+    </ul>
+</header>
+
+<body>
+    </object>
+    <main>
+        <div class='todoApp'>
+            <a href="../todo/todo.html"><button>To Do Application</button></a>
+        </div>
+        <h2>Week 6 Notes:</h2>
+        <div class='notes'>
+            <h3>No Readings this week</h3>
+        </div>
+
+        <h2>Week 6 code examples:</h2>
+        <div class='notes'>
+            <h3>To do application controller</h3>
+            <code>
+                import Model from './model.js';<br>
+                import Views from './view.js';<br>
+                <br>
+                export default class Todo {<br>
+                constructor(todoId) {<br>
+                this.element = document.getElementById(todoId),
+                this.Model = new Model();<br>
+                this.Views = new Views();<br>
+                } <br>
+                <br>
+                filterTasks(taskStatus) {<br>
+                const todoListFiltered = this.Model.getTasksFiltered(taskStatus);<br>
+                console.log(todoListFiltered);<br>
+                this.Views.renderTodoList(this.element, todoListFiltered);<br>
+                } <br>
+                <br>
+                showTodoList() {<br>
+                const todoList = this.Model.getAllTask();<br>
+                this.Views.renderTodoList(this.element, todoList);<br>
+                } <br>
+                <br>
+                addTask(description) {<br>
+                this.Model.addTask(description);<br>
+                } <br>
+                <br>
+                removeTask(id) {<br>
+                this.Model.removeTask(id);<br>
+                if (document.getElementById('all').style.backgroundColor != 'white') {<br>
+                const todoList = this.Model.getAllTask();<br>
+                this.Views.renderTodoList(this.element, todoList);<br>
+                } <br>
+                else if (document.getElementById('finished').style.backgroundColor != 'white'){<br>
+                this.filterTasks(true);<br>
+                } <br>
+                else {<br>
+                this.filterTasks(false);<br>
+                } <br>
+                } <br>
+                <br>
+                setComplete(complete, id) {<br>
+                this.Model.setComplete(complete, id);<br>
+                } <br>
+                } <br>
+            </code>
+        </div>
+
+        <h2>Week 6 team activity:</h2>
+        <div class='notes'>
+            <h3>No Team Activity this week</h3>
+        </div>
+
+        <div class='meSection'>
+            <img class='meImage' src="../images/me.png" alt="Me">
+        </div>
+    </main>
+    <footer>
+        &copy Jordan Dickson 2020
+    </footer>
+
+
+    <script src="../scripts/index.js"></script>
+</body>
+
+</html>
