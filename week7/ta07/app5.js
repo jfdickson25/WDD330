@@ -95,6 +95,7 @@ function hike3EventListener() {
 }
 
 function allHikeEventListener() {
+  document.getElementById('commentSection').innerHTML = '';
   document.getElementById('commentList').innerHTML = '';
   commentArray = JSON.parse(localStorage.AllComments);
       commentArray.forEach(comment => {
