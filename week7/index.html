@@ -72,6 +72,12 @@
                 <br>
                 <p>As you can see, the fetch() method returns a promise that resolves to the response returned from the URL that was provided as an argument. In the example above, the promise will be resolved when a response is received from the URL 'https:example.com/data'. Because it’s a promise, we can also use a catch statement at the end to deal with any errors that may occur.
                 </p>
+
+            <h3>JQUERY</h3>
+                <p>            The jQuery library is a good option for this – it has the generic ajax() method that can be used in a very similar way to the fetch() method. For example, if you want to get the data from the number API, you would use the following code:
+                </p>
+                <code>$.ajax('http://numbersapi.com/random')
+                    .done(text => outputDiv.innerHTML = text );</code>
         </div>
 
 
