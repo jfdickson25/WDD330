@@ -27,6 +27,17 @@
     <main>
         <h2>Week 7 Notes:</h2>
         <div class='notes'>
+            <h3>Chaining Multiple Promises</h3>
+            <p>Promises come into their own when multiple asynchronous tasks are required to be carried out one after the other. If each function that performs an asynchronous operation returns a promise, we can chain the then() methods together to form a sequential piece of code that’s easy to read. Each promise will only begin once the previous promise has been settled.
+
+                For example, the player logging in to a game that produced the callback hell earlier, could be written in a much nicer way by using promises:</p>
+            <code>
+                login(userName) <br>
+                .then(user => getPlayerInfo(user.id)) <br>
+                .then(info => loadGame(info)) <br>
+                .catch( throw error)</code> <br>
+            <p>A number of new additions to the language return promises, and you’ll see more examples of them used later in the book.</p>
+            <br>
             <h3>Examples I don't understand</h3>
             <h4>A Practical Example</h4>
             <p>A closure is formed when a function returns another function that then maintains access to any variables
@@ -49,13 +60,36 @@
 
             <code>toFahrenheit(30);</code>
             <p><b>Result: </b>86</p>
+
+
+            <h3>Fetch</h3>
+            <h2>Basic Usage</h2> 
+            <p>The Fetch API provides a global fetch() method that only has one mandatory argument, which is the URL of the resource you wish to fetch. A very basic example would look something like the following piece of code:
+            </p>
+            <code>fetch('https://example.com/data') <br>
+                .then( // code that handles the response ) <br>
+                .catch( // code that runs if the server returns an error ) <br></code>
+                <br>
+                <p>As you can see, the fetch() method returns a promise that resolves to the response returned from the URL that was provided as an argument. In the example above, the promise will be resolved when a response is received from the URL 'https:example.com/data'. Because it’s a promise, we can also use a catch statement at the end to deal with any errors that may occur.
+                </p>
         </div>
 
 
         <h2>Week 7 code examples:</h2>
         <div class='notes'>
-            <h3>Placeholder</h3>
+            <h3>Hike Event Listener from Team Activity</h3>
             <code>
+                function hike1EventListener() { <br>
+                    console.log("Get comments for hike 1"); <br>
+                    document.getElementById('commentList').innerHTML = ''; <br>
+                    commentArray = JSON.parse(localStorage.AllComments); <br>
+                    commentArray.forEach(comment => { <br>
+                      if (comment.hikeId == '1') { <br>
+                        displayHikeComments(comment); <br>
+                      } <br>
+                    }); <br>
+                     document.getElementById('commentSection').innerHTML = ''; <br>
+                  } <br>
             </code>
         </div>
 
