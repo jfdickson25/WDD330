@@ -1,7 +1,7 @@
 
 let count = 1;
 window.addEventListener('load', () => { 
-    fetch('http://swapi.dev/api/people/?page=1')
+    fetch('https://swapi.dev/api/people/?page=1')
         .then(result => result.json())
         .then(people => {
             let main = document.querySelector('main');
@@ -27,6 +27,14 @@ window.addEventListener('load', () => {
 });
 
 function changePage(url) {
+    var p1 = url.slice(0,4);
+    var p2 = url.slice(4);
+    console.log("Here is part 1: ", p1);
+    console.log("Here is part 2: ", p2);
+    p1 += 's';
+    p1 += p2;
+    url = p1;
+    console.log('New url: ', url);
     fetch(url)
     .then(result => result.json())
     .then(people => {
@@ -75,6 +83,14 @@ function changePage(url) {
 
 
 function getCharacterInfo(url) {
+    var p1 = url.slice(0,4);
+    var p2 = url.slice(4);
+    console.log("Here is part 1: ", p1);
+    console.log("Here is part 2: ", p2);
+    p1 += 's';
+    p1 += p2;
+    url = p1;
+    console.log('New url: ', url);
     fetch(url)
         .then(result => result.json())
         .then(person => {
