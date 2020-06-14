@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7</title>
+    <link rel="stylesheet" href="../styles/week.css">
+</head>
+
+<header>
+    <ul id='navigation'>
+        <li id='menu'><a href="#">&#9776; Menu </a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../week1">Week 1</a></li>
+        <li><a href="../week2">Week 2</a></li>
+        <li><a href="../week3">Week 3</a></li>
+        <li><a href="../week4">Week 4</a></li>
+        <li><a href="../week5">Week 5</a></li>
+        <li><a href="../week6">Week 6</a></li>
+        <li><a href="../week7">Week 7</a></li>
+        <li><a href="#">Week 8</a></li>
+    </ul>
+</header>
+
+<body>
+    </object>
+    <main>
+        <h2>Week 8 Notes:</h2>
+        <div class='notes'>
+            <h3>Canvas vs SVG</h3>
+            <p>
+                In summary, if you need to paint pixels to the screen and have no concerns about the ability to retrieve
+                and modify your shapes,
+                canvas is probably the better choice. If, on the other hand, you need to be able to access and change
+                specific aspects of your
+                graphics, SVG might be more appropriate.
+            </p>
+            <h3>Transforms</h3>
+            <p>
+
+                The CSS3 transform property lets you lets you translate, rotate, scale, and/or skew any element on the
+                page. While some of these effects were possible using previously existing CSS features (such as
+                translating with relative and absolute positioning), CSS3 gives you unprecedented control over many more
+                aspects of the element’s appearance.
+
+                We can manipulate an element’s appearance usingtransform functions. The value of the transform property
+                is one or more transform functions (separated by spaces) that will be applied in the order they’re
+                provided. In this book, we’ll cover all the two-dimensional transform functions. All modern browsers,
+                starting with IE10 and Android 3, also support the transformation of elements in 3D space, but 3D
+                transforms are beyond the scope of this book.
+            </p>
+        </div>
+
+
+        <h2>Week 8 code examples:</h2>
+        <div class='notes'>
+            <h3>Draw image to canvas example</h3>
+            <code>function drawImageToCanvas() { <br>
+                var canvas = document.getElementById("demo6"); <br>
+                var context = canvas.getContext("2d"); <br>
+                var image = document.getElementById("myImageElem"); <br>
+                context.drawImage(image, 0, 0); <br>
+                } <br>
+            </code>
+            <h3>Canvas drawing a circle example</h3>
+            <code>
+                function drawCircle(canvas) {<br>
+                var context = canvas.getContext("2d");<br>
+                context.beginPath();<br>
+                context.arc(100, 100, 50, 0, Math.PI*2, true);<br>
+                context.closePath();<br>
+                context.strokeStyle = "red";<br>
+                context.fillStyle = "blue";<br>
+                context.lineWidth = 3;<br>
+                context.fill();<br>
+                context.stroke();<br>
+                } <br>
+            </code>
+        </div>
+
+        <h2>Week 8 team activity:</h2>
+        <div class='teamActivity'>
+            <a href="./ta08/ta08.html"><button>Week 8 Team Assignment</button></a>
+        </div>
+
+        <div class='meSection'>
+            <img class='meImage' src="../images/me.png" alt="Me">
+        </div>
+    </main>
+    <footer>
+        &copy Jordan Dickson 2020
+    </footer>
+
+
+    <script src="../scripts/index.js"></script>
+</body>
+
+</html>

@@ -1,13 +1,19 @@
+let count = 1;
 window.addEventListener('load', () => { 
     fetch('https://swapi.dev/api/people/?page=1')
         .then(result => result.json())
         .then(people => {
-            console.log(people);
-            document.querySelector('main').innerHTML = '';
+            let main = document.querySelector('main');
+            main.innerHTML = '';
             people.results.forEach(
                 person => {
-                    document.querySelector('main').innerHTML +=
-                        `<p>${person.name}</p>`;
+                    let character = document.createElement('p');
+                    character.innerHTML = person.name;
+                    character.addEventListener('touchend', () => {
+                        console.log(person.url);
+                        getCharacterInfo(person.url);
+                    })
+                    main.append(character);
                 }
             )
             
@@ -23,14 +29,19 @@ function changePage(url) {
     fetch(url)
     .then(result => result.json())
     .then(people => {
-        document.querySelector('main').innerHTML =
-                    '';
-        people.results.forEach(
-            person => {
-                document.querySelector('main').innerHTML +=
-                    `<p>${person.name}</p>`;
-            }
-        )
+        let main = document.querySelector('main');
+        main.innerHTML = '';
+            people.results.forEach(
+                person => {
+                    let character = document.createElement('p');
+                    character.innerHTML = person.name;
+                    character.addEventListener('touchend', () => {
+                        console.log(person.url);
+                        getCharacterInfo(person.url);
+                    })
+                    main.append(character);
+                }
+            )
 
         if (people.previous == null) {
             document.querySelector('footer').innerHTML =
@@ -59,4 +70,28 @@ function changePage(url) {
                 });
             }
     });
+}
+
+
+function getCharacterInfo(url) {
+    fetch(url)
+        .then(result => result.json())
+        .then(person => {
+            document.querySelector('main').innerHTML = '';
+            document.querySelector('footer').innerHTML = '';
+            document.querySelector('main').innerHTML = `
+            <button onclick='refresh()'>Back</button><br>
+            <h3>Name:</h3><p>${person.name}</p>
+            <h3>Height:</h3><p>${person.height}</p>
+            <h3>Mass:</h3><p>${person.mass}</p>
+            <h3>Hair Color:</h3><p>${person.hair_color}</p>
+            <h3>Eye Color:</h3><p>${person.eye_color}</p>
+            <h3>Birth Year</h3><p>${person.birth_year}</p>
+            `
+
+        });
+}
+
+function refresh() {
+    window.location.reload();
 }
