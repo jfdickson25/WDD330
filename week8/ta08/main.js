@@ -1,6 +1,7 @@
+
 let count = 1;
 window.addEventListener('load', () => { 
-    fetch('https://swapi.dev/api/people/?page=1')
+    fetch('http://swapi.dev/api/people/?page=1')
         .then(result => result.json())
         .then(people => {
             let main = document.querySelector('main');
