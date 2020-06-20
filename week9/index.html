@@ -30,25 +30,109 @@
         <h2>Week 9 Notes:</h2>
         <div class='notes'>
             <h3>Notes</h3>
-            <p></p>
-        </div>
+            <h4>Global Window Object</h4>
+            <p>
+                All the way back in Chapter 2, we introduced the concept of global variables. These are variables that
+                are created without using the const , let or var keywords. Global variables can be accessed in all parts
+                of the program.
 
+                Global variables are actual properties of a global object. In a browser environment, the global object
+                is the window object. This means that any global variable created is actually a property of the window
+                object, as can be seen in the example below:
+                </p> 
 
-        <h2>Week 9 code examples:</h2>
-        <div class='notes'>
-            <h3>Code</h3>
-            <code>
+                <code>
+                    x = 6; // global variable created <br>
+                    &lt;&lt; 6 <br>
+
+                    window.x // same variable can be accessed as a property of the window object <br>
+                    &lt;&lt; 6 // both variables are exactly the same  <br>
+
+                    window.x===x; <br> 
+                    &lt;&lt; true 
+                    </code>
+            <h4>Window Modals</h4>
+            <p>            
+                The window.confirm() method will stop the execution of the program and display a confirmation dialog that shows the message provided as an argument, and giving the options of OK or Cancel. It returns the boolean values of true if the user clicks OK, and false if the user clicks Cancel:
+            </p>
+            <code>window.confirm('Do you wish to continue?'); <br>
+                &lt;&lt; undefined
             </code>
-        </div>
 
-        <h2>Week 9 team activity:</h2>
-        <div class='teamActivity'>
-            <a href="./W9-team-activity/index.html"><button>Week 9 Team Assignment</button></a>
-        </div>
+            <p>
+                The window.prompt() method will stop the execution of the program. It displays a dialog that shows a message provided as an argument, as well as an input field that allows the user to enter text. This text is then returned as a string when the user clicks OK. If the user clicks Cancel, null is returned:
+            </p>
+            <code>window.prompt('Please enter your name:');</code>
 
-        <div class='meSection'>
-            <img class='meImage' src="../images/me.png" alt="Me">
-        </div>
+            <h4>Set Timeout</h4>
+            <p>The window object provides some useful methods for scheduling the execution of a function, and for repeatedly executing functions at regular intervals.
+
+                The window.setTimeout() method accepts a callback to a function as its first parameter and a number of milliseconds as its second parameter. Try entering the following example into a console. It should show an alert dialog after three seconds (that’s 3000 milliseconds):
+            </p>
+            <code>
+                window.setTimeout( () => alert("Time's Up!"), 3000); <br>
+                &lt;&lt; 4
+            </code>
+            <p>Notice that the method returns an integer. This is an ID used to reference that particular timeout. It can also cancel the timeout using the window.clearTimeout() method.</p>
+
+            <h4>Multimedia</h4>
+            <p>
+                Before HTML5, it was notoriously difficult to display audio and video in browsers, and plugins such as Flash often had to be used. HTML5 introduced the <audio> and <video> tags used to insert audio and video clips into a web page. It also introduced a Media API for controlling the playback of the clips using JavaScript.
+                
+                An audio clip can be inserted into a page with the <audio> tag, using the src attribute to point to the audio file:
+            </p>
+            <code>
+                &lt;audio src='/song.mp3' controls&gt;
+                Your browser does not support the audio element.
+                &lt;/audio&gt;
+            </code>
+            <p>A video clip can be inserted with the &lt;video&gt; tag, using the src attribute to point to the movie file:</p>
+                
+            <code>
+                &lt;video src='http://movie.mp4' controls&gt;
+                    Your browser does not support the video element.
+                &lt;/video&gt;
+            </code>
+                <p>Any content inside the &lt;audio&gt; or &lt;video&gt; tags will only display if the browser does not support them; hence, it can be used to display a message to users of older browsers without support for these features. The controls attribute can be added (without any value) and will display the browser’s native controls, such as play, pause, and volume control,</p>
+            </div> 
+            
+            <h2>Week 9 code examples:</h2>
+                    <div class='notes'>
+                        <h3>Code</h3>
+                        <h4>Team Activity Code</h4>
+                        <code>
+                            &lt;script&gt; <br>
+                                window.addEventListener("keydown", function(e){<br>
+                                  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);<br>
+                                  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);<br>
+                                  console.log(audio);<br>
+                                  if (!audio) return;<br>
+                                  audio.currentTime = 0;<br>
+                                  audio.play();<br>
+                                  key.classList.add("playing");<br>
+                                });<br>
+                              
+                              
+                                function removeTransition(e) {<br>
+                                  if(e.propertyName !== "transform") return;<br>
+                                  this.classList.remove("playing");<br>
+                                } <br>
+                              
+                                const keys = document.querySelectorAll(".key"); <br>
+                                keys.forEach(key => key.addEventListener("transitionend", removeTransition)); <br>
+                              
+                              &lt;/script&gt;
+                        </code>
+                    </div>
+
+                    <h2>Week 9 team activity:</h2>
+                    <div class='teamActivity'>
+                        <a href="./W9-team-activity/index.html"><button>Week 9 Team Assignment</button></a>
+                    </div>
+
+                    <div class='meSection'>
+                        <img class='meImage' src="../images/me.png" alt="Me">
+                    </div>
     </main>
     <footer>
         &copy Jordan Dickson 2020
