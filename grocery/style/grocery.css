@@ -42,6 +42,22 @@ th {
 th:hover {
     cursor: pointer;
 }
+
+p:hover {
+    cursor: pointer;
+}
+
+.addSymbol {
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+}
+
+.minusSymbol {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 5px;
+}
 .basket {
     height: 50px;
     width: 50px;
@@ -88,19 +104,7 @@ th:hover {
     border: 5px solid #343a40;
 }
 
-#preferences {
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
-    background-color: #3CBA5F;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: solid green;
-    color: white;
-}
-
-#add {
+.add {
     margin-left: 60%;
     width: 30%;
     margin-right: 10%;
@@ -113,3 +117,114 @@ th:hover {
     bottom: 5px;
     position: fixed;
 }
+
+.item {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: white;
+    border: 2px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.itemName {
+    width: 30%;
+    display: inline-block;
+    margin-left: 10px;
+    text-align: left;
+}
+.quantityAdd {
+    width: 10%;    
+    display: inline-block;
+}
+
+.quantity {
+    width: 10%;
+    display: inline-block;
+}
+.quantityMinus {
+    width: 10%;
+    display: inline-block;
+}
+
+.edit {
+    width: 8%;
+    display: inline-block;
+}
+
+.space {
+    width: 5%;
+    display: inline-block;
+
+}
+
+.delete{
+    width: 8%;     
+    display: inline-block;
+}
+
+#preferences {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: #3CBA5F;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: solid green;
+    color: white;
+}
+
+
+
+
+
+
+
+
+/************************************************************
+  * W3 Schools modal CSS 
+  ************************************************************/
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 15px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }

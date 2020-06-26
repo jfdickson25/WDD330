@@ -34,15 +34,53 @@
     </table>
 
     <section class='content'>
-        <h1>hello</h1>
-        <h1>hello</h1>
-        <h1>hello</h1>
-        <h1>hello</h1>
-        <h1>hello</h1>
-        <h1>hello</h1>
+        <div class='item'>
+            <div class='itemName'>Milk</div>
+            <div class='quantityAdd'><p class='addSymbol'>+</p></div>
+            <div class='quantity'>3</div>
+            <div class='quantityMinus'><p class='minusSymbol'>-</p></div>
+            <div class='space'></div>
+            <img class='edit' src="./img/pencil.png">
+            <img class='delete' src="./img/trash-can.png">
+            <div class='space'></div>
+        </div>
+    </section>
+
+    <section class='content'>
+        <div class='item'>
+            <div class='itemName'>Beef</div>
+            <div class='quantityAdd'><p class='addSymbol'>+</p></div>
+            <div class='quantity'>2</div>
+            <div class='quantityMinus'><p class='minusSymbol'>-</p></div>
+            <div class='space'></div>
+            <img class='edit' src="./img/pencil.png">
+            <img class='delete' src="./img/trash-can.png">
+            <div class='space'></div>
+        </div>
     </section>
     
-    <button id='add'>Add Item</button>
+    <button class='add' id='myBtn'>Add Item</button>
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form action="#">
+                <label for="itemToAdd">Item:</label>
+                <input type="text" id="itemToAdd">
+                <br>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity">
+                <br>
+                <br>
+                <button id="newitem" type="button">Add Item</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="grocery.js" type="application/javascript"></script>
     
 </body>
 </html>
