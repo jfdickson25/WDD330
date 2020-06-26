@@ -1,38 +1,115 @@
 html, body {
     margin: 0px;
     padding: 0px;
+    background-color: grey;
+    font-family: 'Playball', cursive;
 }
 
 header {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-bottom: 15px;
+    background-color: white;
 }
 
-h1 {
+h2 {
     display: inline-block;
+}
+
+h3 {
+    color: white;
+    margin: 10px;
 }
 
 table {
     text-align: center;
     font-weight: bold;
     width: 100%;
+    background-color: white;
+    margin-bottom: 0px;
 }
 
 th {
     border: 1px solid black;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    padding: 10px;
+    padding: 5px;
     background-color: darkred;
     color: white;
+    margin-bottom: 0px;
 }
 
 th:hover {
-    transform: translateY(-10px);
+    cursor: pointer;
 }
 .basket {
     height: 50px;
     width: 50px;
+}
+
+.content {
+    background-color: grey;
+    border: solid grey;
+}
+
+.settings {
+    background-color: white;
+}
+
+.settings:hover {
+    transform: scale(1.1);
+}
+
+.backIcon {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: green;
+    padding-left: 15px;
+    border-radius: 180px;
+    font-weight: bolder;
+    padding-top: 10px;
+}
+
+.back {
+    background-color: white;
+}
+
+.color {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    border-radius: 20px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.colorPicked {
+    border: 5px solid #343a40;
+}
+
+#preferences {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: #3CBA5F;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: solid green;
+    color: white;
+}
+
+#add {
+    margin-left: 60%;
+    width: 30%;
+    margin-right: 10%;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    bottom: 5px;
+    position: fixed;
 }
