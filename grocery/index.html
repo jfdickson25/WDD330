@@ -40,7 +40,7 @@
             <div class='quantity'>3</div>
             <div class='quantityMinus'><p class='minusSymbol'>-</p></div>
             <div class='space'></div>
-            <img class='edit' src="./img/pencil.png">
+            <img class='edit' id='myBtn1' src="./img/pencil.png">
             <img class='delete' src="./img/trash-can.png">
             <div class='space'></div>
         </div>
@@ -77,7 +77,24 @@
                 <button id="newitem" type="button">Add Item</button>
             </form>
         </div>
+    </div>
 
+    <div id="myModal1" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close1">&times;</span>
+            <form action="#">
+                <label for="itemToAdd">Item:</label>
+                <input type="text" id="itemToAdd">
+                <br>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity">
+                <br>
+                <br>
+                <button id="newitem" type="button">Edit Item</button>
+            </form>
+        </div>
     </div>
 
     <script src="grocery.js" type="application/javascript"></script>
