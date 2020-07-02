@@ -32,6 +32,31 @@ class Model {
     }
   }
 
+  removeItem(id) {
+    item = JSON.parse(localStorage.item);
+    let itemToDelete = item.find(element => element.id === Number(id));
+    let index = item.indexOf(itemToDelete);
+    item.splice(index, 1);
+    localStorage.item = JSON.stringify(item);
+    return;
+  }
+
+  addOne(id) {
+    item = JSON.parse(localStorage.item);
+    let itemToAdd = item.find(element => element.id === Number(id));
+    let index = item.indexOf(itemToAdd);
+    item[index].quantity =  Number(item[index].quantity) + 1;
+    localStorage.item = JSON.stringify(item);
+  }
+
+  minusOne(id) {
+    item = JSON.parse(localStorage.item);
+    let itemToSubtract = item.find(element => element.id === Number(id));
+    let index = item.indexOf(itemToSubtract);
+    item[index].quantity -= 1;
+    localStorage.item = JSON.stringify(item);
+  }
+
 }
 
 export default Model;

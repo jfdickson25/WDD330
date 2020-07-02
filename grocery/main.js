@@ -17,3 +17,15 @@ const controller = new Grocery('itemList');
         controller.addItem(name, quantity, category);
      });
  }
+
+ export function deleteItemEvent(id) {
+    controller.deleteItem(id);
+ }
+
+ export function addOne(id) {
+   controller.addOne(id);
+ }
+
+ export function minusOne(id) {
+   controller.minusOne(id)
+ }

@@ -1,3 +1,5 @@
+import {deleteItemEvent, addOne, minusOne}  from './main.js';
+
 // Teacher solution helped me to know how to set up the view
 class View {
     renderItemList(itemElement, items) {
@@ -27,10 +29,16 @@ class View {
         const addSymbol = document.createElement('p');
         addSymbol.className = 'addSymbol';
         addSymbol.innerHTML = '+';
+        addSymbol.addEventListener('touchend', () => {
+            addOne(itemInfo.id);
+            let num = document.getElementById('quantity' + String(itemInfo.id)).innerHTML;
+            document.getElementById('quantity' + String(itemInfo.id)).innerHTML = Number(num) + 1;
+        });
         quantityAdd.appendChild(addSymbol);
 
         const quantity = document.createElement('div');
         quantity.className = 'quantity';
+        quantity.id = 'quantity' + String(itemInfo.id);
         quantity.innerHTML = itemInfo.quantity;
 
 
@@ -39,6 +47,13 @@ class View {
         const minusSymbol = document.createElement('p');
         minusSymbol.className = 'minusSymbol';
         minusSymbol.innerHTML = '-';
+        minusSymbol.addEventListener('touchend', () => {
+            let num = document.getElementById('quantity' + String(itemInfo.id)).innerHTML;
+            if (Number(num) > 0) {
+                document.getElementById('quantity' + String(itemInfo.id)).innerHTML = Number(num) - 1;
+                minusOne(itemInfo.id);
+            }
+        });
         quantityMinus.appendChild(minusSymbol);
 
         const space = document.createElement('div');
@@ -54,7 +69,7 @@ class View {
         deleteItem.className = 'delete';
         deleteItem.id = `delete${itemInfo.id}`;
         deleteItem.addEventListener('touchend', () => {
-            console.log("Delete triggered for item: ", itemInfo.name)
+            deleteItemEvent(itemInfo.id);
         });
 
         const space1 = document.createElement('div');
