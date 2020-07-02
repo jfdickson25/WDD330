@@ -3,6 +3,7 @@ const controller = new Grocery('itemList');
  
  
  window.addEventListener('load', () => {
+    controller.showItemList();
     addItemEventListener();
  });
 
