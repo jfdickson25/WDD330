@@ -1,4 +1,4 @@
-import {deleteItemEvent, addOne, minusOne}  from './main.js';
+import {editItemEvent, deleteItemEvent, addOne, minusOne}  from './main.js';
 
 // Teacher solution helped me to know how to set up the view
 class View {
@@ -22,6 +22,7 @@ class View {
         
         const name = document.createElement('div');
         name.className = 'itemName';
+        name.id = `name${itemInfo.id}`;
         name.innerHTML = itemInfo.name;
 
         const quantityAdd = document.createElement('div');
@@ -63,6 +64,9 @@ class View {
         editItem.src = './img/pencil.png';
         editItem.className = 'edit';
         editItem.id = `edit${itemInfo.id}`;
+        editItem.addEventListener('touchend', () => {
+            editItemEvent(itemInfo.id, itemInfo.name, itemInfo.quantity, itemInfo.category);
+        });
 
         const deleteItem = document.createElement('img');
         deleteItem.src = './img/trash-can.png';

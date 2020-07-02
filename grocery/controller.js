@@ -13,6 +13,10 @@ export default class Grocery {
     this.Views.renderItemList(this.element, itemList);
   }
 
+  editItem(id, name, quantity) {
+    this.Model.editItem(id, name, quantity);
+  }
+
   addItem(name, quantity, category) {
     console.log("In the controller: Name of Item: ", name, "Quantity: ", quantity);
     this.Model.addItem(name, quantity, category);

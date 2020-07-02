@@ -92,13 +92,16 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close1">&times;</span>
+            <br>
+            <br>
             <form action="#">
                 <label for="editedName">Item:</label>
-                <input type="text" id="editedName">
+                <input type="text" id="editName">
                 <br>
                 <label for="editQuantity">Quantity:</label>
                 <input type="number" id="editQuantity">
                 <br>
+                <input type="hidden" id='editId'>
                 <br>
                 <button id="editItem" type="button">Edit Item</button>
             </form>
@@ -106,7 +109,6 @@
     </div>
 
     <script src="main.js" type='module'></script>
-    <script src="grocery.js"></script>
 
 </body>
 
