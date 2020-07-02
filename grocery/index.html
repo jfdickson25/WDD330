@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/grocery.css">
     <title>Grocery</title>
 </head>
+
 <body>
     <header>
         <div>
-            <a href="./preferences.html"><img class='settings' style='margin-left: 85%; margin-right: 5%; width: 10%;' src="./img/settings.svg" alt="settings"></a>
+            <a href="./preferences.html"><img class='settings' style='margin-left: 85%; margin-right: 5%; width: 10%;'
+                    src="./img/settings.svg" alt="settings"></a>
         </div>
         <img class="basket" src="./img/basket.svg" alt="Fruit Basket">
         <h2>What's in the Pantry?</h2>
@@ -36,9 +39,13 @@
     <section class='content'>
         <div class='item'>
             <div class='itemName'>Milk</div>
-            <div class='quantityAdd'><p class='addSymbol'>+</p></div>
+            <div class='quantityAdd'>
+                <p class='addSymbol'>+</p>
+            </div>
             <div class='quantity'>3</div>
-            <div class='quantityMinus'><p class='minusSymbol'>-</p></div>
+            <div class='quantityMinus'>
+                <p class='minusSymbol'>-</p>
+            </div>
             <div class='space'></div>
             <img class='edit' id='myBtn1' src="./img/pencil.png">
             <img class='delete' src="./img/trash-can.png">
@@ -46,19 +53,9 @@
         </div>
     </section>
 
-    <section class='content'>
-        <div class='item'>
-            <div class='itemName'>Beef</div>
-            <div class='quantityAdd'><p class='addSymbol'>+</p></div>
-            <div class='quantity'>2</div>
-            <div class='quantityMinus'><p class='minusSymbol'>-</p></div>
-            <div class='space'></div>
-            <img class='edit' src="./img/pencil.png">
-            <img class='delete' src="./img/trash-can.png">
-            <div class='space'></div>
-        </div>
+    <section id='itemList' class="items">
     </section>
-    
+
     <button class='add' id='myBtn'>Add Item</button>
 
     <div id="myModal" class="modal">
@@ -67,14 +64,40 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <form action="#">
-                <label for="itemToAdd">Item:</label>
-                <input type="text" id="itemToAdd">
+                <table style='text-align: left;'>
+                    <tr>
+                        <td>
+                            <p>Category:</p>
+                        </td>
+                        <td>
+                            <select name="category" id="category">
+                                <option value="breakfast">Breakfast</option>
+                                <option value="lunch">Lunch</option>
+                                <option value="dinner">Dinner</option>
+                                <option value="snack">Snack</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Item:</p>
+                        </td>
+                        <td>
+                            <input type="text" id="name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Quantity:</p>
+                        </td>
+                        <td>
+                            <input type="number" id="quantity">
+                        </td>
+                    </tr>
+                </table>
                 <br>
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity">
-                <br>
-                <br>
-                <button id="newitem" type="button">Add Item</button>
+                <button id="newItem" type="button">Add Item</button>
+
             </form>
         </div>
     </div>
@@ -85,19 +108,21 @@
         <div class="modal-content">
             <span class="close1">&times;</span>
             <form action="#">
-                <label for="itemToAdd">Item:</label>
-                <input type="text" id="itemToAdd">
+                <label for="editedName">Item:</label>
+                <input type="text" id="editedName">
                 <br>
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity">
+                <label for="editQuantity">Quantity:</label>
+                <input type="number" id="editQuantity">
                 <br>
                 <br>
-                <button id="newitem" type="button">Edit Item</button>
+                <button id="editItem" type="button">Edit Item</button>
             </form>
         </div>
     </div>
 
+    <script src="main.js" type='module'></script>
     <script src="grocery.js" type="application/javascript"></script>
-    
+
 </body>
+
 </html>
