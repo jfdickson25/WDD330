@@ -8,6 +8,26 @@ export default class Grocery {
      this.Views = new Views();
   }
 
+  filterBreakfast() {
+    const itemList = this.Model.getBreakfastItems();
+    this.Views.renderItemList(this.element, itemList);
+  }
+
+  filterLunch() {
+    const itemList = this.Model.getLunchItems();
+    this.Views.renderItemList(this.element, itemList);
+  }
+
+  filterDinner() {
+    const itemList = this.Model.getDinnerItems();
+    this.Views.renderItemList(this.element, itemList);
+  }
+
+  filterSnacks() {
+    const itemList = this.Model.getSnacksItems();
+    this.Views.renderItemList(this.element, itemList);
+  }
+
   showItemList() {
     const itemList = this.Model.getAllItems();
     this.Views.renderItemList(this.element, itemList);

@@ -10,6 +10,54 @@ if (!localStorage.item) {
 
 class Model {
 
+  getBreakfastItems() {
+    let breakfastItems = [];
+    const items = JSON.parse(localStorage.item);
+    items.forEach(item => {
+      if (item.category == 'breakfast') {
+        breakfastItems.push(item);
+      }
+    });
+
+    return breakfastItems;
+  }
+
+  getLunchItems() {
+    let lunchItems = [];
+    const items = JSON.parse(localStorage.item);
+    items.forEach(item => {
+      if (item.category == 'lunch') {
+        lunchItems.push(item);
+      }
+    });
+
+    return lunchItems;
+  }
+
+  getDinnerItems() {
+    let dinnerItems = [];
+    const items = JSON.parse(localStorage.item);
+    items.forEach(item => {
+      if (item.category == 'dinner') {
+        dinnerItems.push(item);
+      }
+    });
+
+    return dinnerItems;
+  }
+
+  getSnacksItems() {
+    let snacksItems = [];
+    const items = JSON.parse(localStorage.item);
+    items.forEach(item => {
+      if (item.category == 'snacks') {
+        snacksItems.push(item);
+      }
+    });
+
+    return snacksItems;
+  }
+
   getAllItems() {
     let items = JSON.parse(localStorage.item);
     return items;

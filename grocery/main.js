@@ -4,6 +4,7 @@ const controller = new Grocery('itemList');
 
 window.addEventListener('load', () => {
    controller.showItemList();
+   createTabs();
    addItemEventListener();
    editItemEventListener();
 
@@ -19,6 +20,76 @@ window.addEventListener('load', () => {
       document.querySelector('body').style.backgroundColor = localStorage.color;
    }
 });
+
+function createTabs() {
+   const tr = document.getElementById('tableRow');
+
+   const all = document.createElement('th');
+   all.innerHTML = 'All';
+   all.style.textDecoration = 'underline';
+   all.addEventListener('touchend', () => {
+      controller.showItemList();
+      all.style.textDecoration = 'underline';
+      breakfast.style.textDecoration = 'none';
+      lunch.style.textDecoration = 'none';
+      dinner.style.textDecoration = 'none';
+      snacks.style.textDecoration = 'none';
+   });
+
+   const breakfast = document.createElement('th');
+   breakfast.innerHTML = 'Breakfast';
+   breakfast.addEventListener('touchend', () => {
+      controller.filterBreakfast();
+      all.style.textDecoration = 'none';
+      breakfast.style.textDecoration = 'underline';
+      lunch.style.textDecoration = 'none';
+      dinner.style.textDecoration = 'none';
+      snacks.style.textDecoration = 'none';
+      
+   });
+
+   const lunch = document.createElement('th');
+   lunch.innerHTML = 'Lunch';
+   lunch.addEventListener('touchend', () => {
+      controller.filterLunch();
+      all.style.textDecoration = 'none';
+      breakfast.style.textDecoration = 'none';
+      lunch.style.textDecoration = 'underline';
+      dinner.style.textDecoration = 'none';
+      snacks.style.textDecoration = 'none';
+   });
+
+   const dinner = document.createElement('th');
+   dinner.innerHTML = 'Dinner';
+   dinner.addEventListener('touchend', () => {
+      controller.filterDinner();
+      all.style.textDecoration = 'none';
+      breakfast.style.textDecoration = 'none';
+      lunch.style.textDecoration = 'none';
+      dinner.style.textDecoration = 'underline';
+      snacks.style.textDecoration = 'none';
+   });
+
+   const snacks = document.createElement('th');
+   snacks.innerHTML = 'Snacks';
+   snacks.addEventListener('touchend', () => {
+      controller.filterSnacks();
+      all.style.textDecoration = 'none';
+      breakfast.style.textDecoration = 'none';
+      lunch.style.textDecoration = 'none';
+      dinner.style.textDecoration = 'none';
+      snacks.style.textDecoration = 'underline';
+   });
+
+
+
+   tr.appendChild(all);
+   tr.appendChild(breakfast);
+   tr.appendChild(lunch);
+   tr.appendChild(dinner);
+   tr.appendChild(snacks);
+   
+}
 
 function addItemEventListener() {
    const addButton = document.getElementById('newItem');
