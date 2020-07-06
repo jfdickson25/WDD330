@@ -92,14 +92,6 @@ class View {
         itemDiv.appendChild(deleteItem);
         itemDiv.appendChild(space2);
 
-
-        /*
-                    <div class='space'></div>
-                    <img class='edit' id='edit${itemInfo.id}' src="./img/pencil.png">
-                    <img class='delete' id='delete${itemInfo.id}' src="./img/trash-can.png">
-                    <div class='space'></div>
-        */
-
         return item;
     }
 }
