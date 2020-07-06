@@ -63,11 +63,6 @@ p:hover {
     width: 50px;
 }
 
-.content {
-    background-color: grey;
-    border: solid grey;
-}
-
 .settings {
     background-color: white;
 }

@@ -11,7 +11,7 @@ class View {
     }
     renderOneItem(itemInfo) {
         const item = document.createElement('section');
-        item.classList.add('content');
+        item.style.backgroundColor = localStorage.color;
         item.setAttribute('data-name', itemInfo.name);
 
 

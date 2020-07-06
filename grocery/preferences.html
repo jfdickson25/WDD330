@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style='background-color: white;'>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style/grocery.css">
     <title>Preferences</title>
 </head>
-<body>
+<body style='background-color: white;' onload='currentPreference()'>
     <div class='back'>
         <a href="index.html" style="text-decoration: none;"><h1 class=backIcon>&lt;</h1></a>
     </div>
@@ -16,21 +16,24 @@
         <h2>What's in the Pantry?</h2>
     </header>
 
-    <button id='preferences'><p>SAVE PREFERENCES</p></button>
-
     <h3>Background Color:</h3>
-    <div class="color colorPicked" style="background-color: #8FB28A;">
+    <div class="color" onclick='changeBackground("grey")' id='grey' style="background-color: grey;">
         
     </div>
-    <div class="color" style="background-color: #E0EC95">
+    <div class="color" onclick='changeBackground("#8FB28A")' id='#8FB28A' style="background-color: #8FB28A;">
         
     </div>
-    <div class="color" style="background-color: #B57878">
+    <div class="color" onclick='changeBackground("#E0EC95")' id='#E0EC95' style="background-color: #E0EC95">
         
     </div>
-    <div class="color" style="background-color: #86B5D8">
+    <div class="color" onclick='changeBackground("#B57878")' id='#B57878' style="background-color: #B57878">
         
     </div>
+    <div class="color" onclick='changeBackground("#86B5D8")' id='#86B5D8' style="background-color: #86B5D8">
+        
+    </div>
+
+    <script src='preferences.js'></script>
 
 </body>
 </html>

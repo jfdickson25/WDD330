@@ -6,6 +6,18 @@ window.addEventListener('load', () => {
    controller.showItemList();
    addItemEventListener();
    editItemEventListener();
+
+
+   if (!localStorage.color) {
+      console.log('No color picked');
+      document.querySelector('html').style.backgroundColor = 'grey';
+      document.querySelector('body').style.backgroundColor = 'grey';
+      localStorage.color = 'grey';
+   }
+   else {
+      document.querySelector('html').style.backgroundColor = localStorage.color;
+      document.querySelector('body').style.backgroundColor = localStorage.color;
+   }
 });
 
 function addItemEventListener() {
@@ -15,6 +27,10 @@ function addItemEventListener() {
       const quantity = document.getElementById('quantity').value;
       const category = document.getElementById('category').value;
 
+      var modal = document.getElementById("myModal");	
+      modal.style.display = "none";	
+      document.getElementById('name').value = '';
+      document.getElementById('quantity').value = '';
       controller.addItem(name, quantity, category);
    });
 }
