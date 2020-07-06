@@ -3,6 +3,7 @@ const controller = new Grocery('itemList');
 
 
 window.addEventListener('load', () => {
+   localStorage.category = 'all';
    controller.showItemList();
    createTabs();
    addItemEventListener();
@@ -23,11 +24,11 @@ window.addEventListener('load', () => {
 
 function createTabs() {
    const tr = document.getElementById('tableRow');
-
    const all = document.createElement('th');
    all.innerHTML = 'All';
    all.style.textDecoration = 'underline';
    all.addEventListener('touchend', () => {
+      localStorage.category = 'all';
       controller.showItemList();
       all.style.textDecoration = 'underline';
       breakfast.style.textDecoration = 'none';
@@ -39,6 +40,7 @@ function createTabs() {
    const breakfast = document.createElement('th');
    breakfast.innerHTML = 'Breakfast';
    breakfast.addEventListener('touchend', () => {
+      localStorage.category = 'breakfast';
       controller.filterBreakfast();
       all.style.textDecoration = 'none';
       breakfast.style.textDecoration = 'underline';
@@ -51,6 +53,7 @@ function createTabs() {
    const lunch = document.createElement('th');
    lunch.innerHTML = 'Lunch';
    lunch.addEventListener('touchend', () => {
+      localStorage.category = 'lunch';
       controller.filterLunch();
       all.style.textDecoration = 'none';
       breakfast.style.textDecoration = 'none';
@@ -62,6 +65,7 @@ function createTabs() {
    const dinner = document.createElement('th');
    dinner.innerHTML = 'Dinner';
    dinner.addEventListener('touchend', () => {
+      localStorage.category = 'dinner';
       controller.filterDinner();
       all.style.textDecoration = 'none';
       breakfast.style.textDecoration = 'none';
@@ -73,6 +77,7 @@ function createTabs() {
    const snacks = document.createElement('th');
    snacks.innerHTML = 'Snacks';
    snacks.addEventListener('touchend', () => {
+      localStorage.category = 'snacks';
       controller.filterSnacks();
       all.style.textDecoration = 'none';
       breakfast.style.textDecoration = 'none';

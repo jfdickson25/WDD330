@@ -46,8 +46,28 @@ export default class Grocery {
 
   deleteItem(id) {
     this.Model.removeItem(id);
-    const itemList = this.Model.getAllItems();
-    this.Views.renderItemList(this.element, itemList);
+    
+    if(localStorage.category == 'all') {
+      const itemList = this.Model.getAllItems();
+      this.Views.renderItemList(this.element, itemList);
+    }
+    else if(localStorage.category == 'breakfast'){
+      const itemList = this.Model.getBreakfastItems();
+      this.Views.renderItemList(this.element, itemList);
+    }
+    else if(localStorage.category == 'lunch'){
+      const itemList = this.Model.getLunchItems();
+      this.Views.renderItemList(this.element, itemList);
+    }
+    else if(localStorage.category == 'dinner'){
+      const itemList = this.Model.getDinnerItems();
+      this.Views.renderItemList(this.element, itemList);
+    }
+    else if(localStorage.category == 'snacks'){
+      const itemList = this.Model.getSnacksItems();
+      this.Views.renderItemList(this.element, itemList);
+    }
+    
   }
 
   addOne(id) {
