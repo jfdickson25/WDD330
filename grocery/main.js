@@ -26,6 +26,7 @@ function createTabs() {
    const tr = document.getElementById('tableRow');
    const all = document.createElement('th');
    all.innerHTML = 'All';
+   all.id = 'all';
    all.style.textDecoration = 'underline';
    all.addEventListener('touchend', () => {
       localStorage.category = 'all';
@@ -39,6 +40,7 @@ function createTabs() {
 
    const breakfast = document.createElement('th');
    breakfast.innerHTML = 'Breakfast';
+   breakfast.id = 'breakfast';
    breakfast.addEventListener('touchend', () => {
       localStorage.category = 'breakfast';
       controller.filterBreakfast();
@@ -52,6 +54,7 @@ function createTabs() {
 
    const lunch = document.createElement('th');
    lunch.innerHTML = 'Lunch';
+   lunch.id = 'lunch';
    lunch.addEventListener('touchend', () => {
       localStorage.category = 'lunch';
       controller.filterLunch();
@@ -64,6 +67,7 @@ function createTabs() {
 
    const dinner = document.createElement('th');
    dinner.innerHTML = 'Dinner';
+   dinner.id = 'dinner';
    dinner.addEventListener('touchend', () => {
       localStorage.category = 'dinner';
       controller.filterDinner();
@@ -76,6 +80,7 @@ function createTabs() {
 
    const snacks = document.createElement('th');
    snacks.innerHTML = 'Snacks';
+   snacks.id = 'snacks';
    snacks.addEventListener('touchend', () => {
       localStorage.category = 'snacks';
       controller.filterSnacks();
@@ -107,6 +112,11 @@ function addItemEventListener() {
       modal.style.display = "none";	
       document.getElementById('name').value = '';
       document.getElementById('quantity').value = '';
+      document.getElementById('all').style.textDecoration = 'underline';
+      document.getElementById('breakfast').style.textDecoration = 'none';
+      document.getElementById('lunch').style.textDecoration = 'none';
+      document.getElementById('dinner').style.textDecoration = 'none';
+      document.getElementById('snacks').style.textDecoration = 'none';
       controller.addItem(name, quantity, category);
    });
 }
