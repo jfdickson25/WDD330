@@ -106,8 +106,8 @@ p:hover {
     padding: 10px;
     margin-top: 15px;
     margin-bottom: 15px;
-    background-color: white;
-    color: black;
+    background-color: darkcyan;
+    color: white;
     border-radius: 5px;
     bottom: 5px;
     position: fixed;
@@ -173,6 +173,16 @@ p:hover {
     margin-top: 10px;
     margin-bottom: 10px;
     border: solid green;
+    color: white;
+}
+
+#newItem {
+    background-color: darkcyan;
+    color: white;
+}
+
+#editItem {
+    background-color: darkcyan;
     color: white;
 }
 
