@@ -33,15 +33,53 @@ export default class Grocery {
     this.Views.renderItemList(this.element, itemList);
   }
 
-  editItem(id, name, quantity) {
-    this.Model.editItem(id, name, quantity);
+  editItem(id, name, quantity, category) {
+    this.Model.editItem(id, name, quantity, category);
+    if(localStorage.category == 'all') {
+      const itemList = this.Model.getAllItems();
+      this.Views.renderItemList(this.element, itemList);
+    }
+    else if(localStorage.category == 'breakfast'){
+      const itemList = this.Model.getBreakfastItems();
+      this.Views.renderItemList(this.element, itemList);
+    }
+    else if(localStorage.category == 'lunch'){
+      const itemList = this.Model.getLunchItems();
+      this.Views.renderItemList(this.element, itemList);
+    }
+    else if(localStorage.category == 'dinner'){
+      const itemList = this.Model.getDinnerItems();
+      this.Views.renderItemList(this.element, itemList);
+    }
+    else if(localStorage.category == 'snacks'){
+      const itemList = this.Model.getSnacksItems();
+      this.Views.renderItemList(this.element, itemList);
+    }
   }
 
   addItem(name, quantity, category) {
     console.log("In the controller: Name of Item: ", name, "Quantity: ", quantity);
     this.Model.addItem(name, quantity, category);
-    const itemList = this.Model.getAllItems();
-    this.Views.renderItemList(this.element, itemList);
+    if(localStorage.category == 'all') {
+      const itemList = this.Model.getAllItems();
+      this.Views.renderItemList(this.element, itemList);
+    }
+    else if(localStorage.category == 'breakfast'){
+      const itemList = this.Model.getBreakfastItems();
+      this.Views.renderItemList(this.element, itemList);
+    }
+    else if(localStorage.category == 'lunch'){
+      const itemList = this.Model.getLunchItems();
+      this.Views.renderItemList(this.element, itemList);
+    }
+    else if(localStorage.category == 'dinner'){
+      const itemList = this.Model.getDinnerItems();
+      this.Views.renderItemList(this.element, itemList);
+    }
+    else if(localStorage.category == 'snacks'){
+      const itemList = this.Model.getSnacksItems();
+      this.Views.renderItemList(this.element, itemList);
+    }
   }
 
   deleteItem(id) {

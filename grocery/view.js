@@ -43,6 +43,13 @@ class View {
         quantity.innerHTML = itemInfo.quantity;
 
 
+        const category = document.createElement('span');
+        category.className = 'category';
+        category.id = 'category' + String(itemInfo.id);
+        category.innerHTML = itemInfo.category;
+        category.display = 'hidden';
+
+
         const quantityMinus = document.createElement('div');
         quantityMinus.className = 'quantityMinus';
         const minusSymbol = document.createElement('p');
@@ -85,6 +92,7 @@ class View {
         itemDiv.appendChild(name);
         itemDiv.appendChild(quantityAdd);
         itemDiv.appendChild(quantity);
+        itemDiv.appendChild(category);
         itemDiv.appendChild(quantityMinus);
         itemDiv.appendChild(space);
         itemDiv.appendChild(editItem);

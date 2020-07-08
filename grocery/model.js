@@ -63,12 +63,13 @@ class Model {
     return items;
   }
 
-  editItem(id, name, quantity) {
+  editItem(id, name, quantity, category) {
     item = JSON.parse(localStorage.item);
     let itemToAdd = item.find(element => element.id === Number(id));
     let index = item.indexOf(itemToAdd);
     item[index].quantity =  quantity;
     item[index].name = name;
+    item[index].category = category;
     localStorage.item = JSON.stringify(item);
   }
 

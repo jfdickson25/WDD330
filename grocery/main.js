@@ -112,11 +112,6 @@ function addItemEventListener() {
       modal.style.display = "none";	
       document.getElementById('name').value = '';
       document.getElementById('quantity').value = '';
-      document.getElementById('all').style.textDecoration = 'underline';
-      document.getElementById('breakfast').style.textDecoration = 'none';
-      document.getElementById('lunch').style.textDecoration = 'none';
-      document.getElementById('dinner').style.textDecoration = 'none';
-      document.getElementById('snacks').style.textDecoration = 'none';
       controller.addItem(name, quantity, category);
    });
 }
@@ -125,10 +120,11 @@ function editItemEventListener() {
    const editButton = document.getElementById('editItem');
    editButton.addEventListener('touchend', () => {
       if ((document.getElementById('editName').value != null) && (document.getElementById('editQuantity').value != null)) {
+         const category = document.getElementById('editedCategory').value;
          const name = document.getElementById('editName').value;
          const quantity = document.getElementById('editQuantity').value;
          const id = document.getElementById('editId').value;
-         controller.editItem(id, name, quantity);
+         controller.editItem(id, name, quantity, category);
 
          document.getElementById(`name${id}`).innerHTML = name;
          document.getElementById(`quantity${id}`).innerHTML = quantity;
@@ -146,6 +142,7 @@ export function editItemEvent(id) {
    const editItem = document.getElementById(`edit${id}`);
    editItem.onclick = function () {
       modal.style.display = "block";
+      document.getElementById('editedCategory').value = document.getElementById(`category${id}`).innerHTML;
       document.getElementById('editName').value = document.getElementById(`name${id}`).innerHTML;
       document.getElementById('editQuantity').value = document.getElementById(`quantity${id}`).innerHTML;
       document.getElementById('editId').value = id;

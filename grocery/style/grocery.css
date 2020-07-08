@@ -85,6 +85,11 @@ p:hover {
     background-color: white;
 }
 
+.category {
+    visibility: hidden;
+    display: none;
+}
+
 .color {
     margin-left: 10%;
     margin-right: 10%;
