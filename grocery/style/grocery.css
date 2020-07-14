@@ -118,6 +118,10 @@ p:hover {
     position: fixed;
 }
 
+.items {
+    margin-bottom: 75px;
+}
+
 .item {
     width: 90%;
     margin-left: 5%;
