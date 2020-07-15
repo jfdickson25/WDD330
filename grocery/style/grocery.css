@@ -39,6 +39,10 @@ th {
     margin-bottom: 0px;
 }
 
+input {
+    font-size: 11pt;
+}
+
 th:hover {
     cursor: pointer;
 }
