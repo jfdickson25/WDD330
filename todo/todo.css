@@ -3,11 +3,8 @@ body, html {
     padding: 0px;
     background-image: url('./img/backdrop1.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     background-attachment: fixed;
-    background-position: center;
-    overflow-x: hidden;
-    position: relative
     
 }
 
