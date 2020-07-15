@@ -11,7 +11,8 @@ self.addEventListener("install", function(event) {
       console.log("caching index and important routes");
       return cache.addAll(['./',
       './offline.html',
-      './index.html']);
+      './index.html',
+      './preferences.html']);
     });
   };
   
